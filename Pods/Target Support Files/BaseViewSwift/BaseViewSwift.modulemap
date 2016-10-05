@@ -1,0 +1,6 @@
+framework module BaseViewSwift {
+  umbrella header "BaseViewSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
