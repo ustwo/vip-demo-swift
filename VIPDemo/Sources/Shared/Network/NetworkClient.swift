@@ -41,6 +41,13 @@ final class NetworkClient: NetworkClientProtocol {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+        URLSession.shared.dataTask(with: url) { data, response, error in
+
+            DispatchQueue.main.async {
+
+                completion(data, response, error)
+            }
+            
+        }.resume()
     }
 }

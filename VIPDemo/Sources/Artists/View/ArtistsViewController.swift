@@ -31,6 +31,11 @@ final class ArtistsViewController: UIViewController {
     var output: ArtistsViewControllerOutput!
     var router: ArtistsRouter!
 
+    // TODO: check count
+
+    fileprivate let artistsView = ArtistsView()
+    fileprivate var artistsViewModels: [ArtistViewModel] = []
+
 
     // MARK: - Initializers
 
@@ -53,14 +58,23 @@ final class ArtistsViewController: UIViewController {
 
     override func loadView() {
 
-        view = ArtistsView()
+        view = artistsView
     }
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
 
+        setupTableView()
         fetchArtists()
+    }
+
+    private func setupTableView() {
+
+        artistsView.tableView.delegate = self
+        artistsView.tableView.dataSource = self
+
+        artistsView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
     }
 
 
@@ -75,12 +89,50 @@ final class ArtistsViewController: UIViewController {
 }
 
 
+// MARK: - UITableViewDataSource
+
+extension ArtistsViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return artistsViewModels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+
+        let viewModel = artistsViewModels[indexPath.row]
+        cell.textLabel?.text = viewModel.title
+
+        return cell
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension ArtistsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        print("I love snippets")
+    }
+}
+
+
 // MARK: - ArtistsPresenterOutput
 
 extension ArtistsViewController: ArtistsViewControllerInput {
 
-    func displayArtists(viewModels: [ArtistsViewModel]) {
+    func displayArtists(viewModels: [ArtistViewModel]) {
 
-        // TODO: Make it work
+        artistsViewModels = viewModels
+        artistsView.tableView.reloadData()
     }
 }

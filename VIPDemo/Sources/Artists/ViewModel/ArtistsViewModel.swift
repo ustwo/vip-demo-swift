@@ -9,8 +9,9 @@
 import Foundation
 
 
-// MARK: - ArtistsViewModel
+// MARK: - ArtistViewModel
 
-struct ArtistsViewModel {
+struct ArtistViewModel {
 
+    let title: String
 }

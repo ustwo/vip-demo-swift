@@ -20,7 +20,7 @@ protocol ArtistsPresenterInput: ArtistsInteractorOutput {
 
 protocol ArtistsPresenterOutput: class {
 
-    func displayArtists(viewModels: [ArtistsViewModel])
+    func displayArtists(viewModels: [ArtistViewModel])
 }
 
 
@@ -32,9 +32,10 @@ class ArtistsPresenter: ArtistsPresenterInput {
 
     func presentArtists(artists: [Artist]) {
 
-        // TODO: Format the response from the Interactor and pass the result back to the View Controller
+        let viewModels = artists.flatMap { artist -> ArtistViewModel in
 
-        let viewModels = [ArtistsViewModel()]
+            return ArtistViewModel(title: artist.name)
+        }
 
         output.displayArtists(viewModels: viewModels)
     }

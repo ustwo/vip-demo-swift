@@ -45,9 +45,9 @@ class ArtistsView: BaseView {
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        tableView.topAnchor.constraint(equalTo: topAnchor)
-        tableView.leadingAnchor.constraint(equalTo: leadingAnchor)
-        tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
