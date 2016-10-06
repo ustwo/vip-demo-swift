@@ -9,10 +9,14 @@
 import Foundation
 
 
+// MARK: - ArtistsAPIStore
+
 final class ArtistsAPIStore: ArtistsStoreProtocol {
 
-    struct Constants {
+    private struct Constants {
         static let topArtistsLimit = 50
+        static let topArtistsDictionaryKey = "artists"
+        static let topArtistsArrayKey = "artist"
     }
 
     func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
@@ -31,17 +35,30 @@ final class ArtistsAPIStore: ArtistsStoreProtocol {
 
         NetworkClient.sharedInstance.sendRequest(request: request) { (data, response, error) in
 
-            let artists: [Artist] = []
-
             if let jsonData = data {
 
-                let dataString = String(data: jsonData, encoding: String.Encoding.utf8)
+                do {
 
-                print("data \(dataString)")
+                    if let json = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any],
+                        let artistsDictionary = json[Constants.topArtistsDictionaryKey] as? [String: Any],
+                        let artistsArray = artistsDictionary[Constants.topArtistsArrayKey] as? [[String: Any]] {
 
-                // TODO: parse
+                        let artists = artistsArray.flatMap { artistDictionary -> Artist? in
 
-                completion(artists, nil)
+                            return Artist.fromJSON(json: artistDictionary)
+                        }
+
+                        completion(artists, nil)
+
+                    } else {
+
+                        completion([], ArtistsStoreError.invalidResponse)
+                    }
+
+                } catch {
+
+                    completion([], ArtistsStoreError.invalidResponse)
+                }
 
             } else {
 

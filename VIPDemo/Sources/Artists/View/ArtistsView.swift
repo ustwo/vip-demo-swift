@@ -14,21 +14,40 @@ import BaseViewSwift
 
 class ArtistsView: BaseView {
 
+    let tableView = UITableView()
+
 
     // MARK: - Setup
 
     override func setup() {
+
         super.setup()
 
-        // TODO
+        setupTableView()
+    }
+
+    private func setupTableView() {
+
+        addSubview(tableView)
     }
 
 
     // MARK: - Layout
 
     override func setupConstraints() {
+
         super.setupConstraints()
 
-        // TODO
+        setupTableViewConstraints()
+    }
+
+    private func setupTableViewConstraints() {
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        tableView.topAnchor.constraint(equalTo: topAnchor)
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
     }
 }

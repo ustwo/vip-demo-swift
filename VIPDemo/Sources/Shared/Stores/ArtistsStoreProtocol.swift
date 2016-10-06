@@ -8,12 +8,18 @@
 
 import Foundation
 
+
+// MARK: - ArtistsStoreError
+
 enum ArtistsStoreError: Error {
 
     case generic
     case invalidURL
     case invalidResponse
 }
+
+
+// MARK: - ArtistsStoreProtocol
 
 protocol ArtistsStoreProtocol {
 

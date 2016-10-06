@@ -9,10 +9,12 @@
 import UIKit
 
 
+// MARK: - ArtistsViewControllerInput
+
 protocol ArtistsViewControllerInput: ArtistsPresenterOutput {
 
-
 }
+
 
 // MARK: - ArtistsViewControllerOutput
 

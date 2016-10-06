@@ -8,16 +8,25 @@
 
 import Foundation
 
+
+// MARK: - NetworkError
+
 enum NetworkError: Error {
 
     case generic
     case invalidURL
 }
 
+
+// MARK: - NetworkClientProtocol
+
 protocol NetworkClientProtocol {
 
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ())
 }
+
+
+// MARK: - NetworkClient
 
 final class NetworkClient: NetworkClientProtocol {
 

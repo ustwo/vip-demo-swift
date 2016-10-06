@@ -8,21 +8,33 @@
 
 import Foundation
 
+
+// MARK: - APIConstants
+
 struct APIConstants {
 
     static let baseURLString = "https://ws.audioscrobbler.com/2.0/"
     static let apiKey = "foobar"
 }
 
+
+// MARK: - URLConvertible
+
 protocol URLConvertible {
 
     func url() -> URL?
 }
 
+
+// MARK: - APIEndpoint
+
 enum APIEndpoint {
 
     case getTopArtists(Int)
 }
+
+
+// MARK: - URLConvertible
 
 extension APIEndpoint: URLConvertible {
 
