@@ -11,9 +11,8 @@ import UIKit
 
 // MARK: - ArtistsInteractorInput
 
-protocol ArtistsInteractorInput {
+protocol ArtistsInteractorInput: ArtistsViewControllerOutput {
 
-    func fetchArtists()
 }
 
 
@@ -27,16 +26,10 @@ protocol ArtistsInteractorOutput {
 
 // MARK: - ArtistsInteractor
 
-class ArtistsInteractor {
+class ArtistsInteractor: ArtistsInteractorInput {
 
     var output: ArtistsInteractorOutput!
     var worker: ArtistsWorker!
-}
-
-
-// MARK: - ArtistsViewControllerOutput
-
-extension ArtistsInteractor: ArtistsViewControllerOutput {
 
 
     // MARK: - Business logic
@@ -49,7 +42,7 @@ extension ArtistsInteractor: ArtistsViewControllerOutput {
         worker.fetchArtists() { artists in
 
             // Pass the result to the Presenter
-            
+
             output.presentArtists(artists: artists)
         }
     }

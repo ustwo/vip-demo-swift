@@ -9,6 +9,11 @@
 import UIKit
 
 
+protocol ArtistsViewControllerInput: ArtistsPresenterOutput {
+
+
+}
+
 // MARK: - ArtistsViewControllerOutput
 
 protocol ArtistsViewControllerOutput {
@@ -70,7 +75,7 @@ final class ArtistsViewController: UIViewController {
 
 // MARK: - ArtistsPresenterOutput
 
-extension ArtistsViewController: ArtistsPresenterOutput {
+extension ArtistsViewController: ArtistsViewControllerInput {
 
     func displayArtists(viewModels: [ArtistsViewModel]) {
 

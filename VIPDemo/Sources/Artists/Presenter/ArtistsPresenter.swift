@@ -9,6 +9,13 @@
 import UIKit
 
 
+// MARK: - ArtistsPresenterInput
+
+protocol ArtistsPresenterInput: ArtistsInteractorOutput {
+
+}
+
+
 // MARK: - ArtistsPresenterOutput
 
 protocol ArtistsPresenterOutput: class {
@@ -19,15 +26,9 @@ protocol ArtistsPresenterOutput: class {
 
 // MARK: - ArtistsPresenter
 
-class ArtistsPresenter {
+class ArtistsPresenter: ArtistsPresenterInput {
 
     weak var output: ArtistsPresenterOutput!
-}
-
-
-// MARK: - ArtistsInteractorOutput
-
-extension ArtistsPresenter: ArtistsInteractorOutput {
 
     func presentArtists(artists: [Artist]) {
 
