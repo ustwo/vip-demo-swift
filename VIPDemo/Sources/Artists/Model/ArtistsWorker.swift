@@ -11,16 +11,20 @@ import UIKit
 
 // MARK: - ArtistsWorker
 
-class ArtistsWorker {
+final class ArtistsWorker {
+
+    fileprivate var store: ArtistsStoreProtocol
+
+    init(store: ArtistsStoreProtocol = ArtistsAPIStore()) {
+
+        self.store = store
+    }
 
 
     // MARK: - Business Logic
 
-    func fetchArtists(completion: ([Artist]) -> ()) {
+    func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
 
-        // TODO: Do the work
-
-        let artist = Artist()
-        completion([artist])
+        store.fetchArtists(completion: completion)
     }
 }

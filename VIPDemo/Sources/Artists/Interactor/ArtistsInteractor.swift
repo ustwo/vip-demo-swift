@@ -36,14 +36,22 @@ class ArtistsInteractor: ArtistsInteractorInput {
 
     func fetchArtists() {
 
-        // Create some Worker to do the work
-
         worker = ArtistsWorker()
-        worker.fetchArtists() { artists in
+        worker.fetchArtists { [weak self] artists, error in
 
-            // Pass the result to the Presenter
+            if let strongSelf = self {
 
-            output.presentArtists(artists: artists)
+                // TODO: (SM) error handling
+
+                if let artistsError = error {
+
+                    print("ERROR: \(artistsError)")
+
+                } else {
+
+                    strongSelf.output.presentArtists(artists: artists)
+                }
+            }
         }
     }
 }
