@@ -74,7 +74,7 @@ final class ArtistsViewController: UIViewController {
         artistsView.tableView.delegate = self
         artistsView.tableView.dataSource = self
 
-        artistsView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        artistsView.tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseIdentifier())
     }
 
 
@@ -105,7 +105,7 @@ extension ArtistsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.reuseIdentifier(), for: indexPath)
 
         let viewModel = artistsViewModels[indexPath.row]
         cell.textLabel?.text = viewModel.title

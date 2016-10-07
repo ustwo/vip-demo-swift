@@ -14,7 +14,7 @@ import Foundation
 struct APIConstants {
 
     static let baseURLString = "https://ws.audioscrobbler.com/2.0/"
-    static let apiKey = "foobar"
+    static let apiKey = "79f867d148b0f1598e7ed8541262c17b"
 }
 
 
