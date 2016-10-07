@@ -1,6 +1,7 @@
 disabled_rules: # rule identifiers to exclude from running
   - file_length
   - function_parameter_count
+  - nesting
 
 # parameterized rules can be customised from this configuration file
 line_length: 200
