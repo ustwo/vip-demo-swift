@@ -26,6 +26,8 @@
 		655FBF101DA79A4100610595 /* ArtistsAPIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF081DA79A4100610595 /* ArtistsAPIStore.swift */; };
 		655FBF111DA79A4100610595 /* ArtistsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF091DA79A4100610595 /* ArtistsStoreProtocol.swift */; };
 		655FBF131DA79A5200610595 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF121DA79A5200610595 /* BaseTableViewCell.swift */; };
+		655FBF171DA7EE3E00610595 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF161DA7EE3E00610595 /* ArtistViewController.swift */; };
+		655FBF191DA7EE4B00610595 /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF181DA7EE4B00610595 /* ArtistView.swift */; };
 		655FD15B1DA54DE400258B23 /* VIPDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD15A1DA54DE400258B23 /* VIPDemoTests.swift */; };
 		655FD1661DA54DE400258B23 /* VIPDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FD1651DA54DE400258B23 /* VIPDemoUITests.swift */; };
 		8EF50592BF366C09B0971D9C /* Pods_VIPDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6349A0FB4889B45D70ADF85F /* Pods_VIPDemoUITests.framework */; };
@@ -76,6 +78,8 @@
 		655FBF081DA79A4100610595 /* ArtistsAPIStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsAPIStore.swift; sourceTree = "<group>"; };
 		655FBF091DA79A4100610595 /* ArtistsStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsStoreProtocol.swift; sourceTree = "<group>"; };
 		655FBF121DA79A5200610595 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		655FBF161DA7EE3E00610595 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		655FBF181DA7EE4B00610595 /* ArtistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
 		655FD1421DA54DE400258B23 /* VIPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655FD1561DA54DE400258B23 /* VIPDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		655FD15A1DA54DE400258B23 /* VIPDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPDemoTests.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				651E678A1DA555D5007CE495 /* AppDelegate.swift */,
+				655FBF141DA7EE1600610595 /* Artist Detail */,
 				651E679F1DA55B1C007CE495 /* Artists */,
 				AAE7F1151DA6571C00EA37A9 /* Shared */,
 			);
@@ -279,6 +284,23 @@
 			isa = PBXGroup;
 			children = (
 				655FBF121DA79A5200610595 /* BaseTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		655FBF141DA7EE1600610595 /* Artist Detail */ = {
+			isa = PBXGroup;
+			children = (
+				655FBF151DA7EE2B00610595 /* View */,
+			);
+			path = "Artist Detail";
+			sourceTree = "<group>";
+		};
+		655FBF151DA7EE2B00610595 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				655FBF161DA7EE3E00610595 /* ArtistViewController.swift */,
+				655FBF181DA7EE4B00610595 /* ArtistView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -650,6 +672,7 @@
 				651E67AE1DA55B1C007CE495 /* ArtistsConfigurator.swift in Sources */,
 				651E67AF1DA55B1C007CE495 /* ArtistsInteractor.swift in Sources */,
 				AA3ED2351DA7AEAA0042FC3F /* ArtistItemView.swift in Sources */,
+				655FBF191DA7EE4B00610595 /* ArtistView.swift in Sources */,
 				655FBF0F1DA79A4100610595 /* API.swift in Sources */,
 				655FBF0D1DA79A4100610595 /* Serializable.swift in Sources */,
 				651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */,
@@ -658,6 +681,7 @@
 				655FBF0B1DA79A4100610595 /* Artist.swift in Sources */,
 				655FBF131DA79A5200610595 /* BaseTableViewCell.swift in Sources */,
 				655FBF101DA79A4100610595 /* ArtistsAPIStore.swift in Sources */,
+				655FBF171DA7EE3E00610595 /* ArtistViewController.swift in Sources */,
 				651E67B61DA55B65007CE495 /* ArtistsViewModel.swift in Sources */,
 				655FBF111DA79A4100610595 /* ArtistsStoreProtocol.swift in Sources */,
 				655FBF0C1DA79A4100610595 /* Parsable.swift in Sources */,

@@ -19,17 +19,16 @@ protocol ArtistsRouterInput {
 
 // MARK: - ArtistsRouter
 
-class ArtistsRouter {
+class ArtistsRouter: ArtistsRouterInput {
 
     weak var viewController: ArtistsViewController!
-}
 
 
-// MARK: - ArtistsRouterInput
-
-extension ArtistsRouter: ArtistsRouterInput {
+    // MARK: - ArtistsRouterInput
 
     func navigateToArtist() {
 
+        let artistViewController = ArtistViewController()
+        viewController.navigationController?.pushViewController(artistViewController, animated: true)
     }
 }

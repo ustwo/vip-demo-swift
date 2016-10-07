@@ -15,6 +15,11 @@ struct Strings {
         static let screenTitle = Strings.localizedString(key: "Top 50 Artists")
     }
 
+    struct Artist {
+
+        static let screenTitle = Strings.localizedString(key: "Artist")
+    }
+
     private static func localizedString(key: String) -> String {
 
         return NSLocalizedString(key, comment: "")

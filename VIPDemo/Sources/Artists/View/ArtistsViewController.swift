@@ -31,8 +31,6 @@ final class ArtistsViewController: UIViewController {
     var output: ArtistsViewControllerOutput!
     var router: ArtistsRouter!
 
-    // TODO: check count
-
     fileprivate let artistsView = ArtistsView()
     fileprivate var artistsViewModels: [ArtistViewModel] = []
 
@@ -124,6 +122,8 @@ extension ArtistsViewController: UITableViewDataSource {
 extension ArtistsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        router.navigateToArtist()
     }
 }
 
