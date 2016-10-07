@@ -9,9 +9,26 @@
 import UIKit
 
 
+// MARK: - ArtistViewControllerInput
+
+protocol ArtistViewControllerInput: ArtistPresenterOutput {
+
+}
+
+
+// MARK: - ArtistViewControllerOutput
+
+protocol ArtistViewControllerOutput {
+
+}
+
+
 // MARK: - ArtistViewController
 
 class ArtistViewController: UIViewController {
+
+    var output: ArtistViewControllerOutput!
+    var router: ArtistRouter!
 
     fileprivate let artistView = ArtistView()
 
@@ -21,11 +38,15 @@ class ArtistViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
         super.init(nibName: nil, bundle: nil)
+
+        ArtistConfigurator.sharedInstance.configure(viewController: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
+
+        ArtistConfigurator.sharedInstance.configure(viewController: self)
     }
 
 
@@ -41,5 +62,16 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
 
         title = Strings.Artist.screenTitle
+    }
+}
+
+
+// MARK: - ArtistPresenterOutput
+
+extension ArtistViewController: ArtistViewControllerInput {
+
+    func displayArtist(viewModel: ArtistViewModel) {
+
+        // TODO
     }
 }
