@@ -65,7 +65,10 @@ final class ArtistsViewController: UIViewController {
 
         super.viewDidLoad()
 
+        title = "Top 50 Artists"
+
         setupTableView()
+        
         fetchArtists()
     }
 

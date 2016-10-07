@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         let artistsViewController = ArtistsViewController()
+        let navigationController = UINavigationController(rootViewController: artistsViewController)
 
         let screen = UIScreen.main
         window = UIWindow(frame: screen.bounds)
-        window?.rootViewController = artistsViewController
+        window?.rootViewController = navigationController
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
 
