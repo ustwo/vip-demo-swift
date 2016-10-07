@@ -11,8 +11,9 @@ import BaseViewSwift
 
 class ArtistItemView: BaseView {
 
-    private let titleLabel = UILabel()
     private let imageView = UIImageView()
+    private let imageOverlayView = UIView()
+    private let titleLabel = UILabel()
 
     var viewModel: ArtistViewModel? {
 
@@ -32,7 +33,7 @@ class ArtistItemView: BaseView {
 
         struct Alpha {
 
-            static let transparency: CGFloat = 0.6
+            static let transparency: CGFloat = 0.7
         }
     }
 
@@ -44,14 +45,21 @@ class ArtistItemView: BaseView {
         super.setup()
 
         setupImageView()
+        setupImageOverlayView()
         setupTitleLabel()
     }
 
     private func setupImageView() {
 
         imageView.contentMode = .scaleToFill
-        imageView.alpha = Constants.Alpha.transparency
         addSubview(imageView)
+    }
+
+    private func setupImageOverlayView() {
+
+        imageOverlayView.backgroundColor = UIColor.darkGray
+        imageOverlayView.alpha = Constants.Alpha.transparency
+        addSubview(imageOverlayView)
     }
 
     private func setupTitleLabel() {
@@ -68,6 +76,7 @@ class ArtistItemView: BaseView {
         super.setupConstraints()
 
         setupTitleLabelConstraints()
+        setupImageOverlayViewConstraints()
         setupImageViewConstraints()
     }
 
@@ -79,8 +88,16 @@ class ArtistItemView: BaseView {
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
 
+    private func setupImageOverlayViewConstraints() {
 
+        imageOverlayView.translatesAutoresizingMaskIntoConstraints = false
+
+        imageOverlayView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        imageOverlayView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        imageOverlayView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        imageOverlayView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 
     private func setupTitleLabelConstraints() {
@@ -114,8 +131,6 @@ class ArtistItemView: BaseView {
             if let strongSelf = self {
 
                 if let imageData = data, let image = UIImage(data: imageData) {
-
-                    print("imageSize: \(image.size)")
 
                     if let responseURL = response?.url, responseURL == imageURL {
 

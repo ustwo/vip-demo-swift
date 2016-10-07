@@ -18,7 +18,7 @@ class ArtistsView: BaseView {
 
     private struct Constants {
 
-        static let estimatedRowHeight: CGFloat = 120.0
+        static let rowHeight: CGFloat = 160.0
     }
 
 
@@ -33,9 +33,9 @@ class ArtistsView: BaseView {
 
     private func setupTableView() {
 
-        tableView.estimatedRowHeight = 160.0
-        tableView.rowHeight = 160.0
+        tableView.rowHeight = Constants.rowHeight
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
 
         addSubview(tableView)
     }

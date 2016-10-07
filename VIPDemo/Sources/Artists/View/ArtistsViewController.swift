@@ -124,8 +124,6 @@ extension ArtistsViewController: UITableViewDataSource {
 extension ArtistsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        print("I love snippets")
     }
 }
 
