@@ -28,6 +28,8 @@ class ArtistTableViewCell: BaseTableViewCell {
         super.setup()
 
         setupItemView()
+
+        clipsToBounds = true
     }
 
     private func setupItemView() {
@@ -53,5 +55,12 @@ class ArtistTableViewCell: BaseTableViewCell {
         itemView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         itemView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         itemView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+
+    override func prepareForReuse() {
+
+        super.prepareForReuse()
+
+        viewModel = nil
     }
 }

@@ -14,4 +14,8 @@ import Foundation
 struct ArtistViewModel {
 
     let title: String
+    let imageURL: URL?
+
+    // self.imageView.image = [UIImage loadFromUrl:viewModel.imageUrl];
+
 }

@@ -47,7 +47,7 @@ final class NetworkClient: NetworkClientProtocol {
 
                 completion(data, response, error)
             }
-            
+
         }.resume()
     }
 }

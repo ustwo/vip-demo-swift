@@ -34,7 +34,7 @@ class ArtistsPresenter: ArtistsPresenterInput {
 
         let viewModels = artists.flatMap { artist -> ArtistViewModel in
 
-            return ArtistViewModel(title: artist.name)
+            return ArtistViewModel(title: artist.name, imageURL: artist.imageURL)
         }
 
         output.displayArtists(viewModels: viewModels)
