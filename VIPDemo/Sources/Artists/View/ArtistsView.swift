@@ -34,7 +34,10 @@ class ArtistsView: BaseView {
     private func setupTableView() {
 
         tableView.rowHeight = Constants.rowHeight
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = UIColor.white
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.layoutMargins = UIEdgeInsets.zero
         tableView.showsVerticalScrollIndicator = false
 
         addSubview(tableView)

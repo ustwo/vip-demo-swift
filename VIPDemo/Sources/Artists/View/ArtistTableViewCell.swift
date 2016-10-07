@@ -30,6 +30,7 @@ class ArtistTableViewCell: BaseTableViewCell {
         setupItemView()
 
         clipsToBounds = true
+        selectionStyle = .none
     }
 
     private func setupItemView() {
