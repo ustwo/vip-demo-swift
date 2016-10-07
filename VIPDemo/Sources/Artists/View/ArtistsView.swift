@@ -16,6 +16,11 @@ class ArtistsView: BaseView {
 
     let tableView = UITableView()
 
+    private struct Constants {
+
+        static let estimatedRowHeight: CGFloat = 60.0
+    }
+
 
     // MARK: - Setup
 
@@ -27,6 +32,9 @@ class ArtistsView: BaseView {
     }
 
     private func setupTableView() {
+
+        tableView.estimatedRowHeight = Constants.estimatedRowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         addSubview(tableView)
     }

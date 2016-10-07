@@ -48,7 +48,7 @@ class BaseTableViewCell: UITableViewCell {
 
     // MARK: - Reuse Identifier
 
-    class func reuseIdentifier() -> String {
+    open class func reuseIdentifier() -> String {
 
         return NSStringFromClass(self)
     }

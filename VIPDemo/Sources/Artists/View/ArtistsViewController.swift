@@ -65,10 +65,9 @@ final class ArtistsViewController: UIViewController {
 
         super.viewDidLoad()
 
-        title = "Top 50 Artists"
+        title = Strings.Artists.screenTitle
 
         setupTableView()
-        
         fetchArtists()
     }
 
@@ -76,8 +75,7 @@ final class ArtistsViewController: UIViewController {
 
         artistsView.tableView.delegate = self
         artistsView.tableView.dataSource = self
-
-        artistsView.tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseIdentifier())
+        artistsView.tableView.register(ArtistTableViewCell.self, forCellReuseIdentifier: ArtistTableViewCell.reuseIdentifier())
     }
 
 
@@ -108,10 +106,13 @@ extension ArtistsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.reuseIdentifier(), for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableViewCell.reuseIdentifier(), for: indexPath) as? ArtistTableViewCell else {
+
+            return UITableViewCell()
+        }
 
         let viewModel = artistsViewModels[indexPath.row]
-        cell.textLabel?.text = viewModel.title
+        cell.viewModel = viewModel
 
         return cell
     }
