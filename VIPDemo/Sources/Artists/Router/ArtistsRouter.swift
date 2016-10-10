@@ -13,7 +13,7 @@ import UIKit
 
 protocol ArtistsRouterInput {
 
-    func navigateToArtist()
+    func navigateToArtist(atIndexPath indexPath: IndexPath)
 }
 
 
@@ -26,9 +26,12 @@ class ArtistsRouter: ArtistsRouterInput {
 
     // MARK: - ArtistsRouterInput
 
-    func navigateToArtist() {
+    func navigateToArtist(atIndexPath indexPath: IndexPath) {
 
-        let artistViewController = ArtistViewController()
-        viewController.navigationController?.pushViewController(artistViewController, animated: true)
+        if let selectedArtist = viewController.output.artists?[indexPath.row] {
+
+            let artistViewController = ArtistViewController(artist: selectedArtist)
+            viewController.navigationController?.pushViewController(artistViewController, animated: true)
+        }
     }
 }

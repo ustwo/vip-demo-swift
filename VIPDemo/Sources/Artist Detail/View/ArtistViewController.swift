@@ -32,8 +32,19 @@ class ArtistViewController: UIViewController {
 
     fileprivate let artistView = ArtistView()
 
+    var artist: Artist?
+
 
     // MARK: - Initializers
+
+    init(artist: Artist) {
+
+        self.artist = artist
+
+        super.init(nibName: nil, bundle: nil)
+
+        ArtistConfigurator.sharedInstance.configure(viewController: self)
+    }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
@@ -61,7 +72,22 @@ class ArtistViewController: UIViewController {
 
         super.viewDidLoad()
 
-        title = Strings.Artist.screenTitle
+        setupTitle()
+    }
+
+
+    // MARK: - Setup
+
+    private func setupTitle() {
+
+        if let artistName = artist?.name {
+
+            title = artistName
+
+        } else {
+
+            title = Strings.Artist.screenTitle
+        }
     }
 }
 

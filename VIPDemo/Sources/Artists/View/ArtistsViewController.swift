@@ -20,6 +20,8 @@ protocol ArtistsViewControllerInput: ArtistsPresenterOutput {
 
 protocol ArtistsViewControllerOutput {
 
+    var artists: [Artist]? { get }
+
     func fetchArtists()
 }
 
@@ -123,7 +125,7 @@ extension ArtistsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        router.navigateToArtist()
+        router.navigateToArtist(atIndexPath: indexPath)
     }
 }
 

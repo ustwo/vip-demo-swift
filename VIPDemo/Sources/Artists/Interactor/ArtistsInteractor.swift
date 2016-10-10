@@ -31,6 +31,8 @@ class ArtistsInteractor: ArtistsInteractorInput {
     var output: ArtistsInteractorOutput!
     var worker: ArtistsWorker!
 
+    var artists: [Artist]?
+
 
     // MARK: - Business logic
 
@@ -42,6 +44,8 @@ class ArtistsInteractor: ArtistsInteractorInput {
             if let strongSelf = self {
 
                 // TODO: (SM) error handling
+
+                strongSelf.artists = artists
 
                 if let artistsError = error {
 
