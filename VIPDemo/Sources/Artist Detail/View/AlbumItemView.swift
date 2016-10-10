@@ -1,8 +1,8 @@
 //
-//  ArtistItemView.swift
+//  AlbumItemView.swift
 //  VIPDemo
 //
-//  Created by Shagun Madhikarmi on 07/10/2016.
+//  Created by Daniela Dias on 10/10/2016.
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
@@ -10,15 +10,14 @@ import Foundation
 import BaseViewSwift
 
 
-// MARK: - ArtistItemView
+// MARK: - AlbumItemView
 
-class ArtistItemView: BaseView {
+class AlbumItemView: BaseView {
 
     private let imageView = UIImageView()
-    private let imageOverlayView = UIView()
     private let titleLabel = UILabel()
 
-    var viewModel: ArtistViewModel? {
+    var viewModel: AlbumViewModel? {
 
         didSet {
 
@@ -32,11 +31,13 @@ class ArtistItemView: BaseView {
         struct Margin {
 
             static let left: CGFloat = 10.0
+            static let right: CGFloat = 10.0
         }
 
-        struct Alpha {
+        struct ImageSize {
 
-            static let transparency: CGFloat = 0.7
+            static let width: CGFloat = 50.0
+            static let height: CGFloat = 50.0
         }
     }
 
@@ -48,7 +49,6 @@ class ArtistItemView: BaseView {
         super.setup()
 
         setupImageView()
-        setupImageOverlayView()
         setupTitleLabel()
     }
 
@@ -58,16 +58,9 @@ class ArtistItemView: BaseView {
         addSubview(imageView)
     }
 
-    private func setupImageOverlayView() {
-
-        imageOverlayView.backgroundColor = UIColor.darkGray
-        imageOverlayView.alpha = Constants.Alpha.transparency
-        addSubview(imageOverlayView)
-    }
-
     private func setupTitleLabel() {
 
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor.darkGray
         addSubview(titleLabel)
     }
 
@@ -79,7 +72,6 @@ class ArtistItemView: BaseView {
         super.setupConstraints()
 
         setupTitleLabelConstraints()
-        setupImageOverlayViewConstraints()
         setupImageViewConstraints()
     }
 
@@ -87,20 +79,10 @@ class ArtistItemView: BaseView {
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-
-    private func setupImageOverlayViewConstraints() {
-
-        imageOverlayView.translatesAutoresizingMaskIntoConstraints = false
-
-        imageOverlayView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageOverlayView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageOverlayView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        imageOverlayView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Margin.left).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: Constants.ImageSize.width).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: Constants.ImageSize.height).isActive = true
     }
 
     private func setupTitleLabelConstraints() {
@@ -108,7 +90,8 @@ class ArtistItemView: BaseView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Constants.Margin.left).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.Margin.right).isActive = true
     }
 
 

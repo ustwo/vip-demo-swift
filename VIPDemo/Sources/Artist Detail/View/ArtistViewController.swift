@@ -34,6 +34,7 @@ class ArtistViewController: UIViewController {
     var router: ArtistRouter!
 
     fileprivate let artistView = ArtistView()
+    fileprivate var albumsViewModels: [AlbumViewModel] = []
 
     var artist: Artist?
 
@@ -76,6 +77,7 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
 
         setupTitle()
+        setupTableView()
         fetchAlbums()
     }
 
@@ -94,6 +96,13 @@ class ArtistViewController: UIViewController {
         }
     }
 
+    private func setupTableView() {
+
+        artistView.tableView.delegate = self
+        artistView.tableView.dataSource = self
+        artistView.tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: AlbumTableViewCell.reuseIdentifier())
+    }
+
 
     // MARK: - Event handling
 
@@ -107,12 +116,53 @@ class ArtistViewController: UIViewController {
 }
 
 
+// MARK: - UITableViewDataSource
+
+extension ArtistViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return albumsViewModels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableViewCell.reuseIdentifier(), for: indexPath) as? AlbumTableViewCell else {
+
+            return UITableViewCell()
+        }
+
+        let viewModel = albumsViewModels[indexPath.row]
+        cell.viewModel = viewModel
+
+        return cell
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension ArtistViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        // Do nothing for now
+    }
+}
+
+
 // MARK: - ArtistPresenterOutput
 
 extension ArtistViewController: ArtistViewControllerInput {
 
     func displayAlbums(viewModels: [AlbumViewModel]) {
 
-        // TODO
+        albumsViewModels = viewModels
+        artistView.tableView.reloadData()
     }
 }

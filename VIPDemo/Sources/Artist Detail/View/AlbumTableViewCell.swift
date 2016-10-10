@@ -1,21 +1,21 @@
 //
-//  ArtistTableViewCell.swift
+//  AlbumTableViewCell.swift
 //  VIPDemo
 //
-//  Created by Shagun Madhikarmi on 07/10/2016.
+//  Created by Daniela Dias on 10/10/2016.
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 
-// MARK: -  ArtistTableViewCell
+// MARK: -  AlbumTableViewCell
 
-class ArtistTableViewCell: BaseTableViewCell {
+class AlbumTableViewCell: BaseTableViewCell {
 
-    let itemView = ArtistItemView()
+    let itemView = AlbumItemView()
 
-    var viewModel: ArtistViewModel? {
+    var viewModel: AlbumViewModel? {
 
         didSet {
 
@@ -38,7 +38,7 @@ class ArtistTableViewCell: BaseTableViewCell {
 
     private func setupItemView() {
 
-       contentView.addSubview(itemView)
+        contentView.addSubview(itemView)
     }
 
 

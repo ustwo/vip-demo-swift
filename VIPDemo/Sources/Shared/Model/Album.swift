@@ -31,7 +31,7 @@ extension Album : Parsable {
         static let urlKey = "url"
         static let imageKey = "image"
         static let imageSizeKey = "size"
-        static let imageSizeValue = "extralarge"
+        static let imageSizeValue = "large"
         static let imageURLKey = "#text"
     }
 
