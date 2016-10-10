@@ -12,12 +12,13 @@ struct Strings {
 
     struct Artists {
 
-        static let screenTitle = Strings.localizedString(key: "Top 50 Artists")
+        static let screenTitle = Strings.localizedString(key: "Top Artists")
     }
 
     struct Artist {
 
         static let screenTitle = Strings.localizedString(key: "Artist")
+        static let albumsTitle = Strings.localizedString(key: "Top Albums")
     }
 
     private static func localizedString(key: String) -> String {
