@@ -31,6 +31,7 @@ protocol URLConvertible {
 enum APIEndpoint {
 
     case getTopArtists(Int)
+    case getTopAlbums(String, Int)
 }
 
 
@@ -47,6 +48,12 @@ extension APIEndpoint: URLConvertible {
             let method = "chart.gettopartists"
 
             return URL(string: "\(APIConstants.baseURLString)?method=\(method)&api_key=\(APIConstants.apiKey)&format=json&limit=\(limit)")
+
+        case .getTopAlbums(let artistId, let limit):
+
+            let method = "artist.gettopalbums"
+
+            return URL(string: "\(APIConstants.baseURLString)?method=\(method)&api_key=\(APIConstants.apiKey)&mbid=\(artistId)&format=json&limit=\(limit)")
         }
     }
 }

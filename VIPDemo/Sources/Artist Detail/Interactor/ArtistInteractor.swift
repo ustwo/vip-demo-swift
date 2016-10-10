@@ -23,7 +23,7 @@ protocol ArtistInteractorInput: ArtistViewControllerOutput {
 
 protocol ArtistInteractorOutput {
 
-    func presentArtist(artist: Artist)
+    func presentAlbums(albums: [Album])
 }
 
 
@@ -32,15 +32,35 @@ protocol ArtistInteractorOutput {
 class ArtistInteractor: ArtistInteractorInput {
 
     var output: ArtistInteractorOutput!
-    var worker: ArtistWorker!
+    var worker: AlbumWorker!
+
+    var albums: [Album]?
 
 
     // MARK: - Business logic
 
-    func fetchArtist() {
+    func fetchAlbums(artistId: String) {
 
-        worker = ArtistWorker()
+        worker = AlbumWorker()
+        worker.fetchAlbums(artistId: artistId) { [weak self] albums, error in
 
-        // TODO: Fetch Artist
+            if let strongSelf = self {
+
+                strongSelf.albums = albums
+
+                if let albumsError = error {
+
+                    // TODO: (SM) error handling
+
+                    print("ERROR: \(albumsError)")
+
+                } else {
+
+                    strongSelf.output.presentAlbums(albums: albums)
+                }
+            }
+        }
     }
+
+
 }

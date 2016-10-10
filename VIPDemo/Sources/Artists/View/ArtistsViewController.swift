@@ -65,10 +65,17 @@ final class ArtistsViewController: UIViewController {
 
         super.viewDidLoad()
 
-        title = Strings.Artists.screenTitle
-
+        setupTitle()
         setupTableView()
         fetchArtists()
+    }
+
+
+    // MARK: - Setup
+
+    private func setupTitle() {
+
+        title = Strings.Artists.screenTitle
     }
 
     private func setupTableView() {
@@ -82,8 +89,6 @@ final class ArtistsViewController: UIViewController {
     // MARK: - Event handling
 
     func fetchArtists() {
-
-        // Ask the Interactor to do some work
 
         output.fetchArtists()
     }

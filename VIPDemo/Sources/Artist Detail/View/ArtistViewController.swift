@@ -20,6 +20,9 @@ protocol ArtistViewControllerInput: ArtistPresenterOutput {
 
 protocol ArtistViewControllerOutput {
 
+    var albums: [Album]? { get }
+
+    func fetchAlbums(artistId: String)
 }
 
 
@@ -73,6 +76,7 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
 
         setupTitle()
+        fetchAlbums()
     }
 
 
@@ -89,6 +93,17 @@ class ArtistViewController: UIViewController {
             title = Strings.Artist.screenTitle
         }
     }
+
+
+    // MARK: - Event handling
+
+    func fetchAlbums() {
+
+        if let artistId = artist?.mbid {
+
+            output.fetchAlbums(artistId: artistId)
+        }
+    }
 }
 
 
@@ -96,7 +111,7 @@ class ArtistViewController: UIViewController {
 
 extension ArtistViewController: ArtistViewControllerInput {
 
-    func displayArtist(viewModel: ArtistViewModel) {
+    func displayAlbums(viewModels: [AlbumViewModel]) {
 
         // TODO
     }

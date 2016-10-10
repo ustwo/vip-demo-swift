@@ -23,7 +23,7 @@ protocol ArtistPresenterInput: ArtistInteractorOutput {
 
 protocol ArtistPresenterOutput: class {
 
-    func displayArtist(viewModel: ArtistViewModel)
+    func displayAlbums(viewModels: [AlbumViewModel])
 }
 
 
@@ -33,10 +33,13 @@ class ArtistPresenter: ArtistPresenterInput {
 
     weak var output: ArtistPresenterOutput!
 
-    func presentArtist(artist: Artist) {
+    func presentAlbums(albums: [Album]) {
 
-        let viewModel = ArtistViewModel(title: artist.name, imageURL: artist.imageURL)
+        let viewModels = albums.flatMap { album -> AlbumViewModel in
 
-        output.displayArtist(viewModel: viewModel)
+            return AlbumViewModel(title: album.name, imageURL: album.imageURL)
+        }
+
+        output.displayAlbums(viewModels: viewModels)
     }
 }
