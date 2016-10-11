@@ -9,12 +9,12 @@
 import Foundation
 
 
-// MARK: - APIConstants
+// MARK: - Configuration
 
-struct APIConstants {
+struct Configuration {
 
     static let baseURLString = "https://ws.audioscrobbler.com/2.0/"
-    static let apiKey = "79f867d148b0f1598e7ed8541262c17b"
+    static let apiKey = "foobar"
 }
 
 
@@ -47,13 +47,13 @@ extension APIEndpoint: URLConvertible {
 
             let method = "chart.gettopartists"
 
-            return URL(string: "\(APIConstants.baseURLString)?method=\(method)&api_key=\(APIConstants.apiKey)&format=json&limit=\(limit)")
+            return URL(string: "\(Configuration.baseURLString)?method=\(method)&api_key=\(Configuration.apiKey)&format=json&limit=\(limit)")
 
         case .getTopAlbums(let artistId, let limit):
 
             let method = "artist.gettopalbums"
 
-            return URL(string: "\(APIConstants.baseURLString)?method=\(method)&api_key=\(APIConstants.apiKey)&mbid=\(artistId)&format=json&limit=\(limit)")
+            return URL(string: "\(Configuration.baseURLString)?method=\(method)&api_key=\(Configuration.apiKey)&mbid=\(artistId)&format=json&limit=\(limit)")
         }
     }
 }

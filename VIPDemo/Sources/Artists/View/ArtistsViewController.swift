@@ -39,20 +39,27 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Initializers
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init(configurator: ArtistsConfigurator = ArtistsConfigurator.sharedInstance) {
 
         super.init(nibName: nil, bundle: nil)
 
-        ArtistsConfigurator.sharedInstance.configure(viewController: self)
+        configure(configurator: configurator)
     }
 
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
 
-        ArtistsConfigurator.sharedInstance.configure(viewController: self)
+        configure(configurator: ArtistsConfigurator.sharedInstance)
     }
 
+
+    // MARK: - Configurator
+
+    private func configure(configurator: ArtistsConfigurator = ArtistsConfigurator.sharedInstance) {
+
+        configurator.configure(viewController: self)
+    }
 
     // MARK: - View lifecycle
 
@@ -146,8 +153,6 @@ extension ArtistsViewController: UITableViewDelegate {
 extension ArtistsViewController: ArtistsViewControllerInput {
 
     func displayArtists(viewModels: [ArtistViewModel]) {
-
-        print("displayArtists")
 
         artistsViewModels = viewModels
         artistsView.tableView.reloadData()

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - ArtistsWorker
 
-final class ArtistsWorker {
+class ArtistsWorker {
 
     fileprivate var store: ArtistsStoreProtocol
 

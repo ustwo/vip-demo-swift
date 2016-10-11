@@ -11,13 +11,29 @@ import Foundation
 
 // MARK: - ArtistsAPIStore
 
-final class ArtistsAPIStore: ArtistsStoreProtocol {
+final class ArtistsAPIStore {
 
-    private struct Constants {
+    fileprivate struct Constants {
         static let topArtistsLimit = 50
         static let topArtistsDictionaryKey = "artists"
         static let topArtistsArrayKey = "artist"
     }
+
+    fileprivate let networkClient: NetworkClientProtocol
+
+
+    // MARK: - Initializers
+
+    init(networkClient: NetworkClientProtocol = NetworkClient.sharedInstance) {
+
+        self.networkClient = networkClient
+    }
+}
+
+
+// MARK: - ArtistsStoreProtocol
+
+extension ArtistsAPIStore: ArtistsStoreProtocol {
 
     func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
 
@@ -31,7 +47,7 @@ final class ArtistsAPIStore: ArtistsStoreProtocol {
 
         let request = URLRequest.jsonRequest(url: url)
 
-        NetworkClient.sharedInstance.sendRequest(request: request) { (data, response, error) in
+        networkClient.sendRequest(request: request) { (data, response, error) in
 
             if let jsonData = data {
 
