@@ -21,6 +21,7 @@ protocol ArtistInteractorInput: ArtistViewControllerOutput {
 protocol ArtistInteractorOutput {
 
     func presentAlbums(albums: [Album])
+    func presentError(error: Error)
 }
 
 
@@ -47,9 +48,7 @@ class ArtistInteractor: ArtistInteractorInput {
 
                 if let albumsError = error {
 
-                    // TODO: (SM) error handling
-
-                    print("ERROR: \(albumsError)")
+                    strongSelf.output.presentError(error: albumsError)
 
                 } else {
 

@@ -28,7 +28,7 @@ protocol ArtistViewControllerOutput {
 
 // MARK: - ArtistViewController
 
-class ArtistViewController: UIViewController {
+class ArtistViewController: UIViewController, ErrorPresenter {
 
     var output: ArtistViewControllerOutput!
     var router: ArtistRouter!
@@ -169,5 +169,10 @@ extension ArtistViewController: ArtistViewControllerInput {
 
         albumsViewModels = viewModels
         artistView.tableView.reloadData()
+    }
+
+    func displayError(viewModel: ErrorViewModel) {
+
+        self.presentError(viewModel: viewModel)
     }
 }
