@@ -83,7 +83,7 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
         artistsView.tableView.delegate = self
         artistsView.tableView.dataSource = self
         artistsView.tableView.register(ArtistTableViewCell.self, forCellReuseIdentifier: ArtistTableViewCell.reuseIdentifier())
-        artistsView.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        artistsView.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
 
@@ -154,6 +154,7 @@ extension ArtistsViewController: ArtistsViewControllerInput {
 
     func displayError(viewModel: ErrorViewModel) {
 
+        artistsView.refreshControl.endRefreshing()
         presentError(viewModel: viewModel)
     }
 }
