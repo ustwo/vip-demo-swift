@@ -83,6 +83,7 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
         artistsView.tableView.delegate = self
         artistsView.tableView.dataSource = self
         artistsView.tableView.register(ArtistTableViewCell.self, forCellReuseIdentifier: ArtistTableViewCell.reuseIdentifier())
+        artistsView.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
     }
 
 
@@ -91,6 +92,11 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
     func fetchArtists() {
 
         output.fetchArtists()
+    }
+
+    func refresh() {
+
+        fetchArtists()
     }
 }
 
@@ -143,6 +149,7 @@ extension ArtistsViewController: ArtistsViewControllerInput {
 
         artistsViewModels = viewModels
         artistsView.tableView.reloadData()
+        artistsView.refreshControl.endRefreshing()
     }
 
     func displayError(viewModel: ErrorViewModel) {

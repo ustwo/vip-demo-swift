@@ -15,6 +15,7 @@ import BaseViewSwift
 class ArtistsView: BaseView {
 
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
 
     private struct Constants {
 
@@ -39,6 +40,7 @@ class ArtistsView: BaseView {
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.showsVerticalScrollIndicator = false
+        tableView.insertSubview(refreshControl, at: 0)
 
         addSubview(tableView)
     }
