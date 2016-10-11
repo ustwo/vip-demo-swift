@@ -18,6 +18,7 @@ extension URLRequest {
     /// - parameter url: The URL of the request to download
     ///
     /// - returns: A new URLRequest instance
+
     static func jsonRequest(url: URL) -> URLRequest {
 
         var request = URLRequest(url: url)
