@@ -173,6 +173,6 @@ extension ArtistViewController: ArtistViewControllerInput {
 
     func displayError(viewModel: ErrorViewModel) {
 
-        self.presentError(viewModel: viewModel)
+        presentError(viewModel: viewModel)
     }
 }
