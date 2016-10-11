@@ -21,6 +21,7 @@ protocol ArtistsPresenterInput: ArtistsInteractorOutput {
 protocol ArtistsPresenterOutput: class {
 
     func displayArtists(viewModels: [ArtistViewModel])
+    func displayError(viewModel: ErrorViewModel)
 }
 
 
@@ -38,5 +39,14 @@ class ArtistsPresenter: ArtistsPresenterInput {
         }
 
         output.displayArtists(viewModels: viewModels)
+    }
+
+    func presentError(error: Error) {
+
+        // TODO: (SM) investigate error 
+
+        let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle, message: Strings.Error.genericMessage, buttonTitles: [Strings.Error.okButtonTitle])
+
+        output.displayError(viewModel: errorViewModel)
     }
 }

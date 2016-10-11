@@ -25,4 +25,11 @@ struct Strings {
 
         return NSLocalizedString(key, comment: "")
     }
+
+    struct Error {
+
+        static let genericTitle = Strings.localizedString(key: "Sorry")
+        static let genericMessage = Strings.localizedString(key: "Something went wrong.")
+        static let okButtonTitle = Strings.localizedString(key: "Ok")
+    }
 }
