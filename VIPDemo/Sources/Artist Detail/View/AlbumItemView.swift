@@ -91,7 +91,7 @@ class AlbumItemView: BaseView {
 
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Constants.Margin.left).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.Margin.right).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.Margin.right).isActive = true
     }
 
 
