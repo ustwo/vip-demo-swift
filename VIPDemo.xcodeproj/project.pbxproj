@@ -47,6 +47,7 @@
 		AA3ED2351DA7AEAA0042FC3F /* ArtistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3ED2341DA7AEAA0042FC3F /* ArtistItemView.swift */; };
 		AACB2A561DACEE0F0017AAEB /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */; };
 		AACB2A581DACF26F0017AAEB /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */; };
+		AACB2A5C1DACF88B0017AAEB /* URLRequest+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */; };
 		C6EDA7813CA74D91A5DDFAED /* Pods_VIPDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */; };
 		CACA7A955C4B977824BD17D0 /* Pods_VIPDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732AFC44A7A75618C4F60C60 /* Pods_VIPDemo.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		AA3ED2341DA7AEAA0042FC3F /* ArtistItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistItemView.swift; sourceTree = "<group>"; };
 		AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+JSON.swift"; sourceTree = "<group>"; };
 		AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B735B22E4BE6CC888196A1 /* Pods-VIPDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemoTests/Pods-VIPDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		D84DBE669CDC0CE4C7A1DCA7 /* Pods-VIPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemo/Pods-VIPDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				655FBF021DA79A4100610595 /* Parsable.swift */,
 				655FBF031DA79A4100610595 /* Serializable.swift */,
 				AA3ED2321DA7AC3E0042FC3F /* Strings.swift */,
+				AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				655FBF0D1DA79A4100610595 /* Serializable.swift in Sources */,
 				65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */,
 				651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */,
+				AACB2A5C1DACF88B0017AAEB /* URLRequest+JSON.swift in Sources */,
 				655FBF0E1DA79A4100610595 /* NetworkClient.swift in Sources */,
 				AACB2A581DACF26F0017AAEB /* ErrorPresenter.swift in Sources */,
 				651E67B21DA55B1C007CE495 /* ArtistsPresenter.swift in Sources */,
