@@ -29,9 +29,7 @@ final class ArtistsAPIStore: ArtistsStoreProtocol {
             return
         }
 
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let request = URLRequest.jsonRequest(url: url)
 
         NetworkClient.sharedInstance.sendRequest(request: request) { (data, response, error) in
 

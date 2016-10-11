@@ -29,11 +29,7 @@ final class AlbumsAPIStore: AlbumsStoreProtocol {
             return
         }
 
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        print("url \(url)")
+        let request = URLRequest.jsonRequest(url: url)
 
         NetworkClient.sharedInstance.sendRequest(request: request) { (data, response, error) in
 
