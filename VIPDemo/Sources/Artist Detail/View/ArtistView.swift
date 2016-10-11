@@ -15,6 +15,7 @@ import BaseViewSwift
 class ArtistView: BaseView {
 
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
 
     private struct Constants {
 
@@ -42,7 +43,7 @@ class ArtistView: BaseView {
         tableView.rowHeight = Constants.rowHeight
         tableView.separatorColor = UIColor.lightGray
         tableView.showsVerticalScrollIndicator = false
-
+        tableView.insertSubview(refreshControl, at: 0)
         addSubview(tableView)
     }
 

@@ -101,6 +101,8 @@ class ArtistViewController: UIViewController, ErrorPresenter {
         artistView.tableView.delegate = self
         artistView.tableView.dataSource = self
         artistView.tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: AlbumTableViewCell.reuseIdentifier())
+        artistView.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+
     }
 
 
@@ -112,6 +114,11 @@ class ArtistViewController: UIViewController, ErrorPresenter {
 
             output.fetchAlbums(artistId: artistId)
         }
+    }
+
+    func refresh() {
+
+        fetchAlbums()
     }
 }
 
@@ -169,10 +176,12 @@ extension ArtistViewController: ArtistViewControllerInput {
 
         albumsViewModels = viewModels
         artistView.tableView.reloadData()
+        artistView.refreshControl.endRefreshing()
     }
 
     func displayError(viewModel: ErrorViewModel) {
 
-        presentError(viewModel: viewModel)
+        artistView.refreshControl.endRefreshing()
+        self.presentError(viewModel: viewModel)
     }
 }

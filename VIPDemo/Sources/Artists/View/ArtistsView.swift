@@ -41,7 +41,6 @@ class ArtistsView: BaseView {
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.showsVerticalScrollIndicator = false
         tableView.insertSubview(refreshControl, at: 0)
-
         addSubview(tableView)
     }
 
