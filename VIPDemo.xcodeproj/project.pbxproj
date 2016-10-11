@@ -48,6 +48,12 @@
 		AACB2A561DACEE0F0017AAEB /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */; };
 		AACB2A581DACF26F0017AAEB /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */; };
 		AACB2A5C1DACF88B0017AAEB /* URLRequest+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */; };
+		AACB2A5E1DAD04120017AAEB /* UIImageView+RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A5D1DAD04120017AAEB /* UIImageView+RemoteImage.swift */; };
+		AACB2A611DAD0F410017AAEB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A601DAD0F410017AAEB /* ImageManager.swift */; };
+		AACB2A631DAD0F4E0017AAEB /* ImageStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */; };
+		AACB2A651DAD0F640017AAEB /* ImageStoreCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */; };
+		AACB2A671DAD0F800017AAEB /* ImageMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */; };
+		AACB2A691DAD0F9A0017AAEB /* ImageNetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */; };
 		C6EDA7813CA74D91A5DDFAED /* Pods_VIPDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */; };
 		CACA7A955C4B977824BD17D0 /* Pods_VIPDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732AFC44A7A75618C4F60C60 /* Pods_VIPDemo.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +127,12 @@
 		AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+JSON.swift"; sourceTree = "<group>"; };
+		AACB2A5D1DAD04120017AAEB /* UIImageView+RemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RemoteImage.swift"; sourceTree = "<group>"; };
+		AACB2A601DAD0F410017AAEB /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStoreProtocol.swift; sourceTree = "<group>"; };
+		AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStoreCaching.swift; sourceTree = "<group>"; };
+		AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMemoryStore.swift; sourceTree = "<group>"; };
+		AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNetworkStore.swift; sourceTree = "<group>"; };
 		AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B735B22E4BE6CC888196A1 /* Pods-VIPDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemoTests/Pods-VIPDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		D84DBE669CDC0CE4C7A1DCA7 /* Pods-VIPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemo/Pods-VIPDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -318,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				655FBF121DA79A5200610595 /* BaseTableViewCell.swift */,
+				AACB2A5D1DAD04120017AAEB /* UIImageView+RemoteImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,9 +458,22 @@
 			path = VIPDemoUITests;
 			sourceTree = "<group>";
 		};
+		AACB2A5F1DAD0F3A0017AAEB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AACB2A601DAD0F410017AAEB /* ImageManager.swift */,
+				AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */,
+				AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */,
+				AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */,
+				AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		AAE7F1151DA6571C00EA37A9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AACB2A5F1DAD0F3A0017AAEB /* Image */,
 				655FBF001DA79A4100610595 /* Model */,
 				655FBF041DA79A4100610595 /* Network */,
 				655FBF061DA79A4100610595 /* Store */,
@@ -758,9 +784,11 @@
 				65BCA0B11DAB8F4D00CDF74E /* AlbumsAPIStore.swift in Sources */,
 				AA3ED2331DA7AC3E0042FC3F /* Strings.swift in Sources */,
 				651E67B11DA55B1C007CE495 /* ArtistsWorker.swift in Sources */,
+				AACB2A671DAD0F800017AAEB /* ImageMemoryStore.swift in Sources */,
 				655FBF321DA7F39300610595 /* ArtistConfigurator.swift in Sources */,
 				651E67B31DA55B1C007CE495 /* ArtistsRouter.swift in Sources */,
 				65BCA0B51DABA2D300CDF74E /* AlbumTableViewCell.swift in Sources */,
+				AACB2A631DAD0F4E0017AAEB /* ImageStoreProtocol.swift in Sources */,
 				651E678C1DA555D5007CE495 /* AppDelegate.swift in Sources */,
 				AACB2A561DACEE0F0017AAEB /* ErrorViewModel.swift in Sources */,
 				AA3ED2311DA7A59D0042FC3F /* ArtistTableViewCell.swift in Sources */,
@@ -774,6 +802,7 @@
 				655FBF0D1DA79A4100610595 /* Serializable.swift in Sources */,
 				65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */,
 				651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */,
+				AACB2A611DAD0F410017AAEB /* ImageManager.swift in Sources */,
 				AACB2A5C1DACF88B0017AAEB /* URLRequest+JSON.swift in Sources */,
 				655FBF0E1DA79A4100610595 /* NetworkClient.swift in Sources */,
 				AACB2A581DACF26F0017AAEB /* ErrorPresenter.swift in Sources */,
@@ -781,6 +810,8 @@
 				655FBF0B1DA79A4100610595 /* Artist.swift in Sources */,
 				65BCA0AD1DAB8D4A00CDF74E /* Album.swift in Sources */,
 				655FBF131DA79A5200610595 /* BaseTableViewCell.swift in Sources */,
+				AACB2A5E1DAD04120017AAEB /* UIImageView+RemoteImage.swift in Sources */,
+				AACB2A651DAD0F640017AAEB /* ImageStoreCaching.swift in Sources */,
 				65BCA0AF1DAB8F3D00CDF74E /* AlbumsStoreProtocol.swift in Sources */,
 				655FBF101DA79A4100610595 /* ArtistsAPIStore.swift in Sources */,
 				655FBF171DA7EE3E00610595 /* ArtistViewController.swift in Sources */,
@@ -788,6 +819,7 @@
 				655FBF111DA79A4100610595 /* ArtistsStoreProtocol.swift in Sources */,
 				655FBF361DA7F39300610595 /* ArtistRouter.swift in Sources */,
 				655FBF341DA7F39300610595 /* AlbumWorker.swift in Sources */,
+				AACB2A691DAD0F9A0017AAEB /* ImageNetworkStore.swift in Sources */,
 				655FBF0C1DA79A4100610595 /* Parsable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

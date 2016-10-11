@@ -23,7 +23,7 @@ class ArtistItemView: BaseView {
         didSet {
 
             titleLabel.text = viewModel?.title
-            setImageURL(url: viewModel?.imageURL)
+            imageView.setImageURL(url: viewModel?.imageURL)
         }
     }
 
@@ -110,41 +110,5 @@ class ArtistItemView: BaseView {
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     }
-
-
-    // MARK: - Image
-
-    func setImageURL(url: URL?) {
-
-        guard let imageURL = url else {
-
-            imageView.image = nil
-
-            return
-        }
-
-        let request = URLRequest(url: imageURL)
-
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
-        NetworkClient.sharedInstance.sendRequest(request: request) { [weak self] data, response, error in
-
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
-            if let strongSelf = self {
-
-                if let imageData = data, let image = UIImage(data: imageData) {
-
-                    if let responseURL = response?.url, responseURL == imageURL {
-
-                        strongSelf.imageView.image = image
-                    }
-
-                } else {
-
-                    strongSelf.imageView.image = nil
-                }
-            }
-        }
-    }
 }
+

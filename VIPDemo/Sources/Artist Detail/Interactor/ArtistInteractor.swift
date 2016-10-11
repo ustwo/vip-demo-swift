@@ -44,14 +44,13 @@ class ArtistInteractor: ArtistInteractorInput {
 
             if let strongSelf = self {
 
-                strongSelf.albums = albums
-
                 if let albumsError = error {
 
                     strongSelf.output.presentError(error: albumsError)
 
                 } else {
 
+                    strongSelf.albums = albums
                     strongSelf.output.presentAlbums(albums: albums)
                 }
             }

@@ -41,7 +41,7 @@ class NetworkClient: NetworkClientProtocol {
 
         let configuration = URLSessionConfiguration.default
         configuration.urlCache = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
-        configuration.timeoutIntervalForRequest = 8.0
+        configuration.timeoutIntervalForRequest = 5.0
 
         session = URLSession(configuration: configuration)
     }
