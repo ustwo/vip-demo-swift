@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/ustwo/vip-demo-swift/blob/master/LICENSE)
 
 # VIP Demo
-Swift sample app demonstrating [View Interactor Presenter](https://cleanswift.com) architecture for iOS.
+Swift sample app demonstrating [View Interactor Presenter](https://clean-swift.com) architecture for iOS.
 
 ### Dependencies 
 
