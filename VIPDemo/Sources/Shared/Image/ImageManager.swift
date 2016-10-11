@@ -51,7 +51,18 @@ class ImageManager {
         }
     }
 
-    func setNetworkActivityIndicatorVisible(visible: Bool) {
+
+    /// Clears all images from all caches
+
+    func clearCache() {
+
+        memoryStore.removeAllImages()
+    }
+
+
+    // MARK: - Private
+
+    private func setNetworkActivityIndicatorVisible(visible: Bool) {
 
         if updateNetworkStatusActivityIndicator {
 

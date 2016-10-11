@@ -147,6 +147,8 @@ extension ArtistsViewController: ArtistsViewControllerInput {
 
     func displayArtists(viewModels: [ArtistViewModel]) {
 
+        print("displayArtists")
+
         artistsViewModels = viewModels
         artistsView.tableView.reloadData()
         artistsView.refreshControl.endRefreshing()

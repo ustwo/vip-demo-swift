@@ -51,7 +51,6 @@
 		AACB2A5E1DAD04120017AAEB /* UIImageView+RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A5D1DAD04120017AAEB /* UIImageView+RemoteImage.swift */; };
 		AACB2A611DAD0F410017AAEB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A601DAD0F410017AAEB /* ImageManager.swift */; };
 		AACB2A631DAD0F4E0017AAEB /* ImageStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */; };
-		AACB2A651DAD0F640017AAEB /* ImageStoreCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */; };
 		AACB2A671DAD0F800017AAEB /* ImageMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */; };
 		AACB2A691DAD0F9A0017AAEB /* ImageNetworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */; };
 		C6EDA7813CA74D91A5DDFAED /* Pods_VIPDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */; };
@@ -130,7 +129,6 @@
 		AACB2A5D1DAD04120017AAEB /* UIImageView+RemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RemoteImage.swift"; sourceTree = "<group>"; };
 		AACB2A601DAD0F410017AAEB /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStoreProtocol.swift; sourceTree = "<group>"; };
-		AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStoreCaching.swift; sourceTree = "<group>"; };
 		AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMemoryStore.swift; sourceTree = "<group>"; };
 		AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNetworkStore.swift; sourceTree = "<group>"; };
 		AF4F32E47AB835125F7FCCE9 /* Pods_VIPDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -464,7 +462,6 @@
 				AACB2A601DAD0F410017AAEB /* ImageManager.swift */,
 				AACB2A661DAD0F800017AAEB /* ImageMemoryStore.swift */,
 				AACB2A681DAD0F9A0017AAEB /* ImageNetworkStore.swift */,
-				AACB2A641DAD0F640017AAEB /* ImageStoreCaching.swift */,
 				AACB2A621DAD0F4E0017AAEB /* ImageStoreProtocol.swift */,
 			);
 			path = Image;
@@ -811,7 +808,6 @@
 				65BCA0AD1DAB8D4A00CDF74E /* Album.swift in Sources */,
 				655FBF131DA79A5200610595 /* BaseTableViewCell.swift in Sources */,
 				AACB2A5E1DAD04120017AAEB /* UIImageView+RemoteImage.swift in Sources */,
-				AACB2A651DAD0F640017AAEB /* ImageStoreCaching.swift in Sources */,
 				65BCA0AF1DAB8F3D00CDF74E /* AlbumsStoreProtocol.swift in Sources */,
 				655FBF101DA79A4100610595 /* ArtistsAPIStore.swift in Sources */,
 				655FBF171DA7EE3E00610595 /* ArtistViewController.swift in Sources */,
