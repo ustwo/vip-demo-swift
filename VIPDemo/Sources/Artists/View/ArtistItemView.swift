@@ -111,4 +111,3 @@ class ArtistItemView: BaseView {
         titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     }
 }
-

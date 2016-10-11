@@ -26,6 +26,6 @@ protocol ImageStoreCaching {
     /// - parameter url: The image URL
     ///
     /// - returns: A string suitable for use as a cache key
-    
+
     func key(url: URL) -> String
 }
