@@ -6,12 +6,10 @@
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 
 /// _ImageManager_ is a singleton for loading images from memory cache, disk cache or network
-
 class ImageManager {
 
     static let sharedInstance = ImageManager()
@@ -21,11 +19,11 @@ class ImageManager {
 
     var updateNetworkStatusActivityIndicator: Bool = true
 
+    
     /// Loads an image from memory cache or the network if not cached
     ///
     /// - parameter url:        The image URL
     /// - parameter completion: The closure to trigger when the image has been loaded
-
     func loadImage(url: URL, completion: @escaping (UIImage?, Error?) -> ()) {
 
         memoryStore.loadImage(url: url) { [weak self] cachedImage, memoryStoreError in
@@ -53,7 +51,6 @@ class ImageManager {
 
 
     /// Clears all images from all caches
-
     func clearCache() {
 
         memoryStore.removeAllImages()

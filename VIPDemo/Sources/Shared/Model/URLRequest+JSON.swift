@@ -10,7 +10,6 @@ import Foundation
 
 
 /// Extension of _URLRequest_ to create a request for accepting and sending JSON data
-
 extension URLRequest {
 
     /// Creates a new URLRequest with JSON accept and content-type
@@ -18,7 +17,6 @@ extension URLRequest {
     /// - parameter url: The URL of the request to download
     ///
     /// - returns: A new URLRequest instance
-
     static func jsonRequest(url: URL) -> URLRequest {
 
         var request = URLRequest(url: url)

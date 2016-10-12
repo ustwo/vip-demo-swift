@@ -6,18 +6,16 @@
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-/// _ImageNetworkStore_ is a store for downloading remote images
 
+/// _ImageNetworkStore_ is a store for downloading remote images
 class ImageNetworkStore: ImageStoreProtocol {
 
     /// Download an image given a URL
     ///
     /// - parameter url:        The image URL
     /// - parameter completion: The closure to trigger when the download completes
-
     func loadImage(url: URL, completion: @escaping (UIImage?, Error?) -> ()) {
 
         let request = URLRequest(url: url)

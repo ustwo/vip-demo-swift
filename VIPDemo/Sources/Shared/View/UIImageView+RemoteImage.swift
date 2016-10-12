@@ -6,9 +6,10 @@
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+
+// MARK: - UIImageView
 
 extension UIImageView {
 

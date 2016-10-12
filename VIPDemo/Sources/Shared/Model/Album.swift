@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - Artist
 
+/// _Album_ is a model representation of a music album
 struct Album {
 
     let mbid: String

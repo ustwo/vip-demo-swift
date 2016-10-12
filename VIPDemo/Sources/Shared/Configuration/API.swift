@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - Configuration
 
+/// _Configuration_ is a struct responsible for general app configurations
 struct Configuration {
 
     static let baseURLString = "https://ws.audioscrobbler.com/2.0/"
@@ -20,6 +21,7 @@ struct Configuration {
 
 // MARK: - URLConvertible
 
+/// _URLConvertible_ is a protocol to implement urls
 protocol URLConvertible {
 
     func url() -> URL?
@@ -28,6 +30,10 @@ protocol URLConvertible {
 
 // MARK: - APIEndpoint
 
+/// _APIEndpoint_ is an enumeration of all types of API requests
+///
+/// - getTopArtists: The get top artists request
+/// - getTopAlbums:  The get top albums request
 enum APIEndpoint {
 
     case getTopArtists(Int)

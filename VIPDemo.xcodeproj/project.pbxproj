@@ -20,7 +20,6 @@
 		651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E67B91DA56528007CE495 /* ArtistsView.swift */; };
 		655FBF0B1DA79A4100610595 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF011DA79A4100610595 /* Artist.swift */; };
 		655FBF0C1DA79A4100610595 /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF021DA79A4100610595 /* Parsable.swift */; };
-		655FBF0D1DA79A4100610595 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF031DA79A4100610595 /* Serializable.swift */; };
 		655FBF0E1DA79A4100610595 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF051DA79A4100610595 /* NetworkClient.swift */; };
 		655FBF131DA79A5200610595 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF121DA79A5200610595 /* BaseTableViewCell.swift */; };
 		655FBF171DA7EE3E00610595 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FBF161DA7EE3E00610595 /* ArtistViewController.swift */; };
@@ -108,7 +107,6 @@
 		651E67B91DA56528007CE495 /* ArtistsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsView.swift; sourceTree = "<group>"; };
 		655FBF011DA79A4100610595 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		655FBF021DA79A4100610595 /* Parsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
-		655FBF031DA79A4100610595 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		655FBF051DA79A4100610595 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		655FBF121DA79A5200610595 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		655FBF161DA7EE3E00610595 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 				AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */,
 				AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */,
 				655FBF021DA79A4100610595 /* Parsable.swift */,
-				655FBF031DA79A4100610595 /* Serializable.swift */,
 				AA3ED2321DA7AC3E0042FC3F /* Strings.swift */,
 				AACB2A5B1DACF88B0017AAEB /* URLRequest+JSON.swift */,
 			);
@@ -901,7 +898,6 @@
 				655FBF191DA7EE4B00610595 /* ArtistView.swift in Sources */,
 				AAA36B3B1DAD3F7800C7D926 /* ArtistsAPIStore.swift in Sources */,
 				65BCA0B31DAB953700CDF74E /* AlbumViewModel.swift in Sources */,
-				655FBF0D1DA79A4100610595 /* Serializable.swift in Sources */,
 				65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */,
 				651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */,
 				AACB2A611DAD0F410017AAEB /* ImageManager.swift in Sources */,

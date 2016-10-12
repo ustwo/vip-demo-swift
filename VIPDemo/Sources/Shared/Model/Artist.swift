@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - Artist
 
+/// _Artist_ is a model representation of a music artist
 struct Artist {
 
     let mbid: String

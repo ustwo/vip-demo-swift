@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// _Strings_ is a struct responsible to hold all the strings in this application
 struct Strings {
 
     struct Artists {

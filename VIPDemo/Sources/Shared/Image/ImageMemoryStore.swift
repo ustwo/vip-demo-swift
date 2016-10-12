@@ -6,11 +6,10 @@
 //  Copyright © 2016 ustwo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-/// _ImageMemoryStore_ is an image store backed by an in-memory cache
 
+/// _ImageMemoryStore_ is an image store backed by an in-memory cache
 class ImageMemoryStore: ImageStoreProtocol {
 
     fileprivate var imageCache = [String: UIImage]()

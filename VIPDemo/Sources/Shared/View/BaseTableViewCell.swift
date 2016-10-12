@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - BaseTableViewCell
 
+/// _BaseTableViewCell_ is a base view to implement abstract and comon behaviour for table view cells
 class BaseTableViewCell: UITableViewCell {
 
 

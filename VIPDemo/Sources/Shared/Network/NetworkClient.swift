@@ -11,6 +11,10 @@ import Foundation
 
 // MARK: - NetworkError
 
+/// _NetworkError_ is an enumeration that specifies network errors
+///
+/// - generic:    Generic error
+/// - invalidURL: Invalid URL error
 enum NetworkError: Error {
 
     case generic
@@ -20,6 +24,7 @@ enum NetworkError: Error {
 
 // MARK: - NetworkClientProtocol
 
+/// _NetworkClientProtocol_ is a protocol specifies send network requests behaviour
 protocol NetworkClientProtocol {
 
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ())
@@ -28,6 +33,7 @@ protocol NetworkClientProtocol {
 
 // MARK: - NetworkClient
 
+/// _NetworkClient_ is a class responsible for network requests
 class NetworkClient: NetworkClientProtocol {
 
     static let sharedInstance = NetworkClient()
@@ -37,6 +43,9 @@ class NetworkClient: NetworkClientProtocol {
 
     // MARK: - Initialisers
 
+    /// Initializes an instance of _NetworkClient_
+    ///
+    /// - returns: The instance of _NetworkClient_
     init() {
 
         let configuration = URLSessionConfiguration.default
@@ -49,6 +58,10 @@ class NetworkClient: NetworkClientProtocol {
 
     // MARK: - Send requests
 
+    /// Sends a URL request
+    ///
+    /// - parameter request:    The URL request
+    /// - parameter completion: The completion block
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
 
         guard let url = request.url else {

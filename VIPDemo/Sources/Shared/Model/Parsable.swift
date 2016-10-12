@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - Parsable
 
+/// _Parsable_ is a protocol to specify parsing behaviour
 protocol Parsable {
 
     associatedtype T
