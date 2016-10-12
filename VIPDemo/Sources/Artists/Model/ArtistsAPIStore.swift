@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - ArtistsAPIStore
 
+/// _ArtistsAPIStore_ is a class responsible for fetching artists
 final class ArtistsAPIStore {
 
     fileprivate struct Constants {
@@ -24,6 +25,11 @@ final class ArtistsAPIStore {
 
     // MARK: - Initializers
 
+    /// Initializes an instance of _ArtistsAPIStore_ with an object that conforms to the protocol _NetworkClientProtocol_
+    ///
+    /// - parameter networkClient: The object to be used to send requests to the API
+    ///
+    /// - returns: The instance of _ArtistsAPIStore_
     init(networkClient: NetworkClientProtocol = NetworkClient.sharedInstance) {
 
         self.networkClient = networkClient
@@ -35,6 +41,9 @@ final class ArtistsAPIStore {
 
 extension ArtistsAPIStore: ArtistsStoreProtocol {
 
+    /// Fetches a list of top artists
+    ///
+    /// - parameter completion: The completion block
     func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
 
         let limit = Constants.topArtistsLimit

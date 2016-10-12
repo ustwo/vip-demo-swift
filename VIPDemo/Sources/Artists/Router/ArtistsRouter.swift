@@ -11,14 +11,19 @@ import UIKit
 
 // MARK: - ArtistsRouterInput
 
+/// _ArtistsRouterInput_ is a protocol for router input behaviours
 protocol ArtistsRouterInput {
 
+    /// Handles the navigation when selecting an artist in the list
+    ///
+    /// - parameter indexPath: The selected index path
     func navigateToArtist(atIndexPath indexPath: IndexPath)
 }
 
 
 // MARK: - ArtistsRouter
 
+/// _ArtistsRouter_ is a class responsible for routing from _ArtistsViewController_
 class ArtistsRouter: ArtistsRouterInput {
 
     weak var viewController: ArtistsViewController!
@@ -26,6 +31,9 @@ class ArtistsRouter: ArtistsRouterInput {
 
     // MARK: - ArtistsRouterInput
 
+    /// Handles the navigation when selecting an artist in the list to artist detail
+    ///
+    /// - parameter indexPath: The selected index path
     func navigateToArtist(atIndexPath indexPath: IndexPath) {
 
         if let artists = viewController.output.artists, indexPath.row < artists.count {

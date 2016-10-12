@@ -27,7 +27,7 @@ protocol ArtistInteractorOutput {
     /// - parameter albums: The list of albums to present
     func presentAlbums(albums: [Album])
 
-    /// Tells the output to presente error
+    /// Tells the output to present an error
     ///
     /// - parameter error: The error to present
     func presentError(error: Error)

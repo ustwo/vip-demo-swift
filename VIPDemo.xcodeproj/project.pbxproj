@@ -374,10 +374,10 @@
 		655FBF151DA7EE2B00610595 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				655FBF161DA7EE3E00610595 /* ArtistViewController.swift */,
-				655FBF181DA7EE4B00610595 /* ArtistView.swift */,
-				65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */,
 				65BCA0B61DABA2DD00CDF74E /* AlbumItemView.swift */,
+				65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */,
+				655FBF181DA7EE4B00610595 /* ArtistView.swift */,
+				655FBF161DA7EE3E00610595 /* ArtistViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

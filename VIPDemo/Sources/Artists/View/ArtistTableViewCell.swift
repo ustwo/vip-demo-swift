@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: -  ArtistTableViewCell
 
+/// _ArtistTableViewCell_ is the table view cell responsible to display an artist
 class ArtistTableViewCell: BaseTableViewCell {
 
     let itemView = ArtistItemView()

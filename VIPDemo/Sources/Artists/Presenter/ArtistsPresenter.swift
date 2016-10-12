@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ArtistsPresenterInput
 
+/// _ArtistsPresenterInput_ is a protocol for presenter input behaviours
 protocol ArtistsPresenterInput: ArtistsInteractorOutput {
 
 }
@@ -18,19 +19,31 @@ protocol ArtistsPresenterInput: ArtistsInteractorOutput {
 
 // MARK: - ArtistsPresenterOutput
 
+/// _ArtistsPresenterOutput_ is a protocol for presenter output behaviours
 protocol ArtistsPresenterOutput: class {
 
+    /// Tells the output to display artists
+    ///
+    /// - parameter viewModels: The artist view models
     func displayArtists(viewModels: [ArtistViewModel])
+
+    /// Tells the output to dislpay an error
+    ///
+    /// - parameter viewModel: The error view model
     func displayError(viewModel: ErrorViewModel)
 }
 
 
 // MARK: - ArtistsPresenter
 
+/// _ArtistsPresenter_ is a class responsible for presenting artists logic
 class ArtistsPresenter: ArtistsPresenterInput {
 
     weak var output: ArtistsPresenterOutput!
 
+    /// Prepares the artist models for presentation and tells the output to display artists
+    ///
+    /// - parameter artists: The list of artists
     func presentArtists(artists: [Artist]) {
 
         let viewModels = artists.flatMap { artist -> ArtistViewModel in
@@ -41,6 +54,9 @@ class ArtistsPresenter: ArtistsPresenterInput {
         output.displayArtists(viewModels: viewModels)
     }
 
+    /// Prepares the error model for presentation and tells the output to display error
+    ///
+    /// - parameter error: The error
     func presentError(error: Error) {
 
         let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle,

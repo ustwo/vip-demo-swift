@@ -24,6 +24,7 @@ protocol ArtistViewControllerOutput {
 
     var albums: [Album]? { get }
 
+    
     /// Tells the output (interactor) to fetch albums for artist
     ///
     /// - parameter artistId: The artist identifier

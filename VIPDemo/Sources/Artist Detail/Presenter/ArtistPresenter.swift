@@ -36,7 +36,7 @@ protocol ArtistPresenterOutput: class {
 
 // MARK: - ArtistsPresenter
 
-/// _ArtistPresenter_ is a class responsible for presenter logic
+/// _ArtistPresenter_ is a class responsible for presenting artist logic
 class ArtistPresenter: ArtistPresenterInput {
 
     weak var output: ArtistPresenterOutput!

@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ArtistsViewControllerInput
 
+/// _ArtistsViewControllerInput_ is a protocol for view controller input behaviours
 protocol ArtistsViewControllerInput: ArtistsPresenterOutput {
 
 }
@@ -18,16 +19,20 @@ protocol ArtistsViewControllerInput: ArtistsPresenterOutput {
 
 // MARK: - ArtistsViewControllerOutput
 
+/// _ArtistsViewControllerInput_ is a protocol for view controller output behaviours
 protocol ArtistsViewControllerOutput {
 
     var artists: [Artist]? { get }
 
+
+    /// Tells the output (interactor) to fetch top artists
     func fetchArtists()
 }
 
 
 // MARK: - ArtistsViewController
 
+/// _ArtistsViewController_ is a view controller responsible for displaying a list of top artists
 final class ArtistsViewController: UIViewController, ErrorPresenter {
 
     var output: ArtistsViewControllerOutput!
@@ -40,6 +45,11 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Initializers
 
+    /// Initializes an instance of _ArtistsViewController_ with a configurator
+    ///
+    /// - parameter configurator: The configurator
+    ///
+    /// - returns: The instance of _ArtistsViewController_
     init(configurator: ArtistsConfigurator = ArtistsConfigurator.sharedInstance) {
 
         super.init(nibName: nil, bundle: nil)
@@ -47,6 +57,11 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
         configure(configurator: configurator)
     }
 
+    /// Initializes an instance of _ArtistsViewController_ from storyboard
+    ///
+    /// - parameter coder: The coder
+    ///
+    /// - returns: The instance of _ArtistsViewController_
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -98,11 +113,13 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Event handling
 
+    /// Asks the output to fetch artists
     func fetchArtists() {
 
         output.fetchArtists()
     }
 
+    /// Asks the output to fetch artists. Called when there is a need to refresh the artists list
     func refresh() {
 
         fetchArtists()
