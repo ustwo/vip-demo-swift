@@ -19,7 +19,7 @@ class ImageManager {
 
     var updateNetworkStatusActivityIndicator: Bool = true
 
-    
+
     /// Loads an image from memory cache or the network if not cached
     ///
     /// - parameter url:        The image URL
