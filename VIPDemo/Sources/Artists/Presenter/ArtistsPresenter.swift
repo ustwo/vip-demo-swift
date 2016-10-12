@@ -43,7 +43,9 @@ class ArtistsPresenter: ArtistsPresenterInput {
 
     func presentError(error: Error) {
 
-        let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle, message: Strings.Error.genericMessage, buttonTitles: [Strings.Error.okButtonTitle])
+        let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle,
+                                            message: Strings.Error.genericMessage,
+                                            buttonTitles: [Strings.Error.okButtonTitle])
 
         output.displayError(viewModel: errorViewModel)
     }

@@ -9,6 +9,9 @@
 import XCTest
 @testable import VIPDemo
 
+
+// MARK: - ArtistsInteractorTests
+
 final class ArtistsInteractorTests: XCTestCase {
 
 
@@ -72,6 +75,9 @@ final class ArtistsInteractorTests: XCTestCase {
     }
 }
 
+
+// MARK: - ArtistsWorkerSpy
+
 final class ArtistsWorkerSpy: ArtistsWorker {
 
     var fetchArtistsCalled = false
@@ -97,6 +103,9 @@ final class ArtistsWorkerSpy: ArtistsWorker {
         }
     }
 }
+
+
+// MARK: - ArtistsInteractorOutputSpy
 
 final class ArtistsInteractorOutputSpy: ArtistsInteractorOutput {
 
