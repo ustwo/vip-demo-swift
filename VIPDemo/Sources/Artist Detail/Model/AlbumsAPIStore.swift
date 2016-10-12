@@ -11,13 +11,29 @@ import Foundation
 
 // MARK: - AlbumsAPIStore
 
-final class AlbumsAPIStore: AlbumsStoreProtocol {
+final class AlbumsAPIStore {
 
-    private struct Constants {
+    fileprivate struct Constants {
         static let topAlbumsLimit = 50
         static let topAlbumsDictionaryKey = "topalbums"
         static let topAlbumsArrayKey = "album"
     }
+
+    fileprivate let networkClient: NetworkClientProtocol
+
+
+    // MARK: - Initializers
+
+    init(networkClient: NetworkClientProtocol = NetworkClient.sharedInstance) {
+
+        self.networkClient = networkClient
+    }
+}
+
+
+// MARK: - AlbumsStoreProtocol
+
+extension AlbumsAPIStore: AlbumsStoreProtocol {
 
     func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
 
@@ -31,7 +47,7 @@ final class AlbumsAPIStore: AlbumsStoreProtocol {
 
         let request = URLRequest.jsonRequest(url: url)
 
-        NetworkClient.sharedInstance.sendRequest(request: request) { (data, response, error) in
+        networkClient.sendRequest(request: request) { data, response, error in
 
             if let jsonData = data {
 

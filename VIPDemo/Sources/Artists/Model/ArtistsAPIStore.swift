@@ -47,7 +47,7 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
 
         let request = URLRequest.jsonRequest(url: url)
 
-        networkClient.sendRequest(request: request) { (data, response, error) in
+        networkClient.sendRequest(request: request) { data, response, error in
 
             if let jsonData = data {
 

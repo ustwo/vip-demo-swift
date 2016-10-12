@@ -89,12 +89,13 @@ final class ArtistsAPIStoreTests: XCTestCase {
 }
 
 
-// MARK: - NetworkClientSpy
+// MARK: - ArtistsNetworkClientSpy
 
 final class ArtistsNetworkClientSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
 
+    
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
 
         sendRequestCalled = true
@@ -119,7 +120,7 @@ final class ArtistsNetworkClientSpy: NetworkClientProtocol {
 }
 
 
-// MARK: - NetworkClientError
+// MARK: - ArtistsNetworkClientError
 
 enum ArtistsNetworkClientError: Error {
 
@@ -127,11 +128,12 @@ enum ArtistsNetworkClientError: Error {
 }
 
 
-// MARK: - NetworkClientErrorSpy
+// MARK: - ArtistsNetworkClientErrorSpy
 
 final class ArtistsNetworkClientErrorSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
+
 
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
 
