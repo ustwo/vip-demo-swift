@@ -1,6 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/ustwo/vip-demo-swift/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/ustwo/vip-demo-swift.svg?token=dAMpyZE3zb4kBmqR4Sjw&branch=artists-list)](https://travis-ci.com/ustwo/vip-demo-swift)
-[![codecov.io](https://codecov.io/github/ustwo/vip-demo-swift/coverage.svg?branch=artists-list)](https://codecov.io/github/ustwo/vip-demo-swift?branch=artists-list)
 
 # VIP Demo
 Swift sample app demonstrating [View Interactor Presenter](https://clean-swift.com) architecture for iOS.
