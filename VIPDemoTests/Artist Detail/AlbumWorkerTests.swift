@@ -13,4 +13,36 @@ final class AlbumWorkerTests: XCTestCase {
 
 
     // MARK: - Tests
+
+    func testFetchAlbumsShouldFetchAlbumsFromStore() {
+
+        // Given
+
+        let store = AlbumsStoreSpy()
+        let worker = AlbumWorker(store: store)
+
+        // When
+
+        worker.fetchAlbums(artistId: "") { albums, error in
+        }
+
+        // Then
+
+        XCTAssertTrue(store.fetchAlbumsCalled)
+    }
+}
+
+
+// MARK: - AlbumsStoreSpy
+
+final class AlbumsStoreSpy: AlbumsStoreProtocol {
+
+    var fetchAlbumsCalled = false
+
+    func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
+
+        fetchAlbumsCalled = true
+
+        completion([], nil)
+    }
 }

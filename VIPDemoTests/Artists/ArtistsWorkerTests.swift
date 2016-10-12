@@ -27,11 +27,11 @@ final class ArtistsWorkerTests: XCTestCase {
         // When
 
         worker.fetchArtists { artists, error in
-
-            // Then
-
-            XCTAssertTrue(store.fetchArtistsCalled)
         }
+
+        // Then
+
+        XCTAssertTrue(store.fetchArtistsCalled)
     }
 }
 

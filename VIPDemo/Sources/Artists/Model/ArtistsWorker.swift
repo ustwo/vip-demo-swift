@@ -15,6 +15,9 @@ class ArtistsWorker {
 
     fileprivate var store: ArtistsStoreProtocol
 
+
+    // MARK: - Initializers
+
     init(store: ArtistsStoreProtocol = ArtistsAPIStore()) {
 
         self.store = store
