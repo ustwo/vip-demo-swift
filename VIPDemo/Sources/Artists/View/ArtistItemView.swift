@@ -14,9 +14,9 @@ import BaseViewSwift
 
 class ArtistItemView: BaseView {
 
-    private let imageView = UIImageView()
-    private let imageOverlayView = UIView()
-    private let titleLabel = UILabel()
+    let imageView = UIImageView()
+    let imageOverlayView = UIView()
+    let titleLabel = UILabel()
 
     var viewModel: ArtistViewModel? {
 

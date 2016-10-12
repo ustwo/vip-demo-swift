@@ -19,7 +19,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
     }
 
     func fetchArtistsShouldReturnTopArtists() {
-        
+
     }
 }
 

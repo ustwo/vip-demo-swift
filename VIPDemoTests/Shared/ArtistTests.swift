@@ -15,6 +15,6 @@ final class ArtistTests: XCTestCase {
     // MARK: - Tests
 
     func testFromJSONReturnsArtist() {
-        
+
     }
 }

@@ -11,6 +11,6 @@ import XCTest
 
 final class ArtistViewControllerTests: XCTestCase {
 
-    
+
     // MARK: - Tests
 }

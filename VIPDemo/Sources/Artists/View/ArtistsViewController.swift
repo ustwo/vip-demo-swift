@@ -33,7 +33,8 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
     var output: ArtistsViewControllerOutput!
     var router: ArtistsRouter!
 
-    fileprivate let artistsView = ArtistsView()
+    let artistsView = ArtistsView()
+
     fileprivate var artistsViewModels: [ArtistViewModel] = []
 
 
