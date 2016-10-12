@@ -33,7 +33,8 @@ class ArtistViewController: UIViewController, ErrorPresenter {
     var output: ArtistViewControllerOutput!
     var router: ArtistRouter!
 
-    fileprivate let artistView = ArtistView()
+    let artistView = ArtistView()
+
     fileprivate var albumsViewModels: [AlbumViewModel] = []
 
     var artist: Artist?
@@ -41,27 +42,28 @@ class ArtistViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Initializers
 
-    init(artist: Artist) {
+    init(artist: Artist, configurator: ArtistConfigurator = ArtistConfigurator.sharedInstance) {
 
         self.artist = artist
 
         super.init(nibName: nil, bundle: nil)
 
-        ArtistConfigurator.sharedInstance.configure(viewController: self)
-    }
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-
-        super.init(nibName: nil, bundle: nil)
-
-        ArtistConfigurator.sharedInstance.configure(viewController: self)
+        configure(configurator: configurator)
     }
 
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
 
-        ArtistConfigurator.sharedInstance.configure(viewController: self)
+        configure(configurator: ArtistConfigurator.sharedInstance)
+    }
+
+
+    // MARK: - Configurator
+
+    private func configure(configurator: ArtistConfigurator = ArtistConfigurator.sharedInstance) {
+
+        configurator.configure(viewController: self)
     }
 
 
