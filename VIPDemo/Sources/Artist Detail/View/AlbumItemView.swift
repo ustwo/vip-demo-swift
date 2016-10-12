@@ -14,8 +14,8 @@ import BaseViewSwift
 
 class AlbumItemView: BaseView {
 
-    private let imageView = UIImageView()
-    private let titleLabel = UILabel()
+    let imageView = UIImageView()
+    let titleLabel = UILabel()
 
     var viewModel: AlbumViewModel? {
 

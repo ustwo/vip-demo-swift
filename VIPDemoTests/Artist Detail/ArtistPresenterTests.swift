@@ -125,7 +125,7 @@ final class ArtistPresenterOutputSpy: ArtistPresenterOutput {
     func displayAlbums(viewModels: [AlbumViewModel]) {
 
         albumsViewModels = viewModels
-        
+
         displayAlbumsCalled = true
     }
 }
