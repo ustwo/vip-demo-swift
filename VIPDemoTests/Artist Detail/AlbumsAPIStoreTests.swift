@@ -9,6 +9,9 @@
 import XCTest
 @testable import VIPDemo
 
+
+// MARK: - AlbumsAPIStoreTests
+
 final class AlbumsAPIStoreTests: XCTestCase {
 
 

@@ -21,7 +21,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         // Given
 
-        let networkClientSpy = NetworkClientSpy()
+        let networkClientSpy = ArtistsNetworkClientSpy()
 
         let store = ArtistsAPIStore(networkClient: networkClientSpy)
 
@@ -39,7 +39,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         // Given
 
-        let networkClientSpy = NetworkClientSpy()
+        let networkClientSpy = ArtistsNetworkClientSpy()
 
         let store = ArtistsAPIStore(networkClient: networkClientSpy)
 
@@ -65,7 +65,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         // Given
 
-        let networkClientSpy = NetworkClientErrorSpy()
+        let networkClientSpy = ArtistsNetworkClientErrorSpy()
 
         let store = ArtistsAPIStore(networkClient: networkClientSpy)
 
@@ -91,7 +91,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
 // MARK: - NetworkClientSpy
 
-final class NetworkClientSpy: NetworkClientProtocol {
+final class ArtistsNetworkClientSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
 
@@ -121,7 +121,7 @@ final class NetworkClientSpy: NetworkClientProtocol {
 
 // MARK: - NetworkClientError
 
-enum NetworkClientError: Error {
+enum ArtistsNetworkClientError: Error {
 
     case generic
 }
@@ -129,7 +129,7 @@ enum NetworkClientError: Error {
 
 // MARK: - NetworkClientErrorSpy
 
-final class NetworkClientErrorSpy: NetworkClientProtocol {
+final class ArtistsNetworkClientErrorSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
 
@@ -137,7 +137,7 @@ final class NetworkClientErrorSpy: NetworkClientProtocol {
 
         sendRequestCalled = true
 
-        let error = NetworkClientError.generic
+        let error = ArtistsNetworkClientError.generic
 
         completion(nil, nil, error)
     }
