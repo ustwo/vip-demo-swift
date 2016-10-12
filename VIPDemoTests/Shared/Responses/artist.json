@@ -1,0 +1,30 @@
+{
+    "name":"Coldplay",
+    "playcount":"334356991",
+    "listeners":"5126338",
+    "mbid":"cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+    "url":"https://www.last.fm/music/Coldplay",
+    "streamable":"0",
+    "image":[
+             {
+             "#text":"https://lastfm-img2.akamaized.net/i/u/34s/0c057486667d4ec8ce07e1b964bce20c.png",
+             "size":"small"
+             },
+             {
+             "#text":"https://lastfm-img2.akamaized.net/i/u/64s/0c057486667d4ec8ce07e1b964bce20c.png",
+             "size":"medium"
+             },
+             {
+             "#text":"https://lastfm-img2.akamaized.net/i/u/174s/0c057486667d4ec8ce07e1b964bce20c.png",
+             "size":"large"
+             },
+             {
+             "#text":"https://lastfm-img2.akamaized.net/i/u/300x300/0c057486667d4ec8ce07e1b964bce20c.png",
+             "size":"extralarge"
+             },
+             {
+             "#text":"https://lastfm-img2.akamaized.net/i/u/0c057486667d4ec8ce07e1b964bce20c.png",
+             "size":"mega"
+             }
+             ]
+}

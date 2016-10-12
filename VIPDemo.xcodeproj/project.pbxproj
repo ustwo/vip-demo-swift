@@ -37,6 +37,8 @@
 		65BCA0B51DABA2D300CDF74E /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */; };
 		65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCA0B61DABA2DD00CDF74E /* AlbumItemView.swift */; };
 		65CECCF81DAE581100A0A8C9 /* top_artists.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA36B5D1DAD468300C7D926 /* top_artists.json */; };
+		65CECCFB1DAE5A4500A0A8C9 /* artist.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CECCFA1DAE5A4500A0A8C9 /* artist.json */; };
+		65CECCFD1DAE5A4F00A0A8C9 /* album.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CECCFC1DAE5A4F00A0A8C9 /* album.json */; };
 		8EF50592BF366C09B0971D9C /* Pods_VIPDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6349A0FB4889B45D70ADF85F /* Pods_VIPDemoUITests.framework */; };
 		AA3ED2311DA7A59D0042FC3F /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3ED2301DA7A59D0042FC3F /* ArtistTableViewCell.swift */; };
 		AA3ED2331DA7AC3E0042FC3F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3ED2321DA7AC3E0042FC3F /* Strings.swift */; };
@@ -128,6 +130,8 @@
 		65BCA0B21DAB953700CDF74E /* AlbumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		65BCA0B61DABA2DD00CDF74E /* AlbumItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumItemView.swift; sourceTree = "<group>"; };
+		65CECCFA1DAE5A4500A0A8C9 /* artist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artist.json; sourceTree = "<group>"; };
+		65CECCFC1DAE5A4F00A0A8C9 /* album.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = album.json; sourceTree = "<group>"; };
 		67025728D9F5CA46579709BA /* Pods-VIPDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemoUITests/Pods-VIPDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E6A36C82EB63401A55798DA /* Pods-VIPDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemoUITests/Pods-VIPDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		732AFC44A7A75618C4F60C60 /* Pods_VIPDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -484,6 +488,15 @@
 			path = VIPDemoUITests;
 			sourceTree = "<group>";
 		};
+		65CECCF91DAE5A2E00A0A8C9 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				65CECCFA1DAE5A4500A0A8C9 /* artist.json */,
+				65CECCFC1DAE5A4F00A0A8C9 /* album.json */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		AAA36B271DAD258B00C7D926 /* Artists */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +515,7 @@
 		AAA36B321DAD2B0900C7D926 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				65CECCF91DAE5A2E00A0A8C9 /* Responses */,
 				AAA36B4C1DAD449E00C7D926 /* AlbumTests.swift */,
 				AAA36B471DAD429900C7D926 /* ArtistTests.swift */,
 				AAA36B331DAD2B2300C7D926 /* XCTestCase+ViewController.swift */,
@@ -700,7 +714,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CECCF81DAE581100A0A8C9 /* top_artists.json in Resources */,
+				65CECCFB1DAE5A4500A0A8C9 /* artist.json in Resources */,
 				AAA36B601DAD469600C7D926 /* top_albums.json in Resources */,
+				65CECCFD1DAE5A4F00A0A8C9 /* album.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
