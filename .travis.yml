@@ -8,17 +8,13 @@ env:
   - PROJECT=VIPDemo.xcodeproj
   - IOS_FRAMEWORK_SCHEME="VIPDemo"
   - IOS_SDK=iphonesimulator10.0
-  - EXAMPLE_SCHEME="iOS Example"
   matrix:
-    - DESTINATION="OS=9.3,name=iPhone 6"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES"
-    - DESTINATION="name=iPhone 7 Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES"
+    - DESTINATION="OS=9.3,name=iPhone 6" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" RUN_TESTS="YES"
+    - DESTINATION="name=iPhone 7 Plus" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" RUN_TESTS="YES"
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-
-before_install:
-  - pod install
 
 # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
