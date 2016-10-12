@@ -95,7 +95,7 @@ final class ArtistsNetworkClientSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
 
-    
+
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
 
         sendRequestCalled = true

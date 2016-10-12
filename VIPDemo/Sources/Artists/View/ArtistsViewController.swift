@@ -62,6 +62,7 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
         configurator.configure(viewController: self)
     }
 
+
     // MARK: - View lifecycle
 
     override func loadView() {

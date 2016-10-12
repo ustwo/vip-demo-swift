@@ -51,6 +51,76 @@ final class ArtistsViewControllerTests: XCTestCase {
         XCTAssertTrue(configuratorSpy.configureCalled)
     }
 
+    func testInitShouldSetViewControllerRouter() {
+
+        // When
+
+        let viewController = ArtistsViewController()
+
+        // Then
+
+        XCTAssertNotNil(viewController.router)
+    }
+
+    func testInitShouldSetViewControllerOutput() {
+
+        // When
+
+        let viewController = ArtistsViewController()
+
+        // Then
+
+        XCTAssertNotNil(viewController.output)
+    }
+
+    func testInitShouldSetInteractorOutput() {
+
+        // When
+
+        let viewController = ArtistsViewController()
+
+        // Then
+
+        if let interactor = viewController.output as? ArtistsInteractor {
+
+            XCTAssertNotNil(interactor.output)
+
+        } else {
+
+            XCTFail()
+        }
+    }
+
+    func testInitShouldSetPresenterOutput() {
+
+        // When
+
+        let viewController = ArtistsViewController()
+
+        // Then
+
+        if let interactor = viewController.output as? ArtistsInteractor,
+            let presenter = interactor.output as? ArtistsPresenter {
+
+            XCTAssertNotNil(presenter.output)
+
+        } else {
+
+            XCTFail()
+        }
+    }
+
+    func testConfigureShouldSetRouterViewController() {
+
+        // When
+
+        let viewController = ArtistsViewController()
+
+        // Then
+
+        XCTAssertEqual(viewController.router.viewController, viewController)
+    }
+
     func testViewDidLoadShouldFetchArtists() {
 
         // Given

@@ -48,7 +48,6 @@
 		AAA36B2D1DAD25B400C7D926 /* ArtistsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B2C1DAD25B400C7D926 /* ArtistsPresenterTests.swift */; };
 		AAA36B2F1DAD25BE00C7D926 /* ArtistsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B2E1DAD25BE00C7D926 /* ArtistsWorkerTests.swift */; };
 		AAA36B341DAD2B2300C7D926 /* XCTestCase+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B331DAD2B2300C7D926 /* XCTestCase+ViewController.swift */; };
-		AAA36B361DAD376000C7D926 /* ArtistsConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B351DAD376000C7D926 /* ArtistsConfiguratorTests.swift */; };
 		AAA36B381DAD3D6D00C7D926 /* ArtistsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B371DAD3D6D00C7D926 /* ArtistsRouterTests.swift */; };
 		AAA36B3B1DAD3F7800C7D926 /* ArtistsAPIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B391DAD3F7800C7D926 /* ArtistsAPIStore.swift */; };
 		AAA36B3C1DAD3F7800C7D926 /* ArtistsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B3A1DAD3F7800C7D926 /* ArtistsStoreProtocol.swift */; };
@@ -57,7 +56,6 @@
 		AAA36B431DAD3FC400C7D926 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B421DAD3FC400C7D926 /* API.swift */; };
 		AAA36B481DAD429900C7D926 /* ArtistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B471DAD429900C7D926 /* ArtistTests.swift */; };
 		AAA36B4D1DAD449E00C7D926 /* AlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B4C1DAD449E00C7D926 /* AlbumTests.swift */; };
-		AAA36B4F1DAD44C400C7D926 /* ArtistConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B4E1DAD44C400C7D926 /* ArtistConfiguratorTests.swift */; };
 		AAA36B521DAD44E300C7D926 /* ArtistInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B511DAD44E300C7D926 /* ArtistInteractorTests.swift */; };
 		AAA36B541DAD44F600C7D926 /* AlbumsAPIStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B531DAD44F600C7D926 /* AlbumsAPIStoreTests.swift */; };
 		AAA36B561DAD450300C7D926 /* AlbumWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA36B551DAD450300C7D926 /* AlbumWorkerTests.swift */; };
@@ -143,7 +141,6 @@
 		AAA36B2C1DAD25B400C7D926 /* ArtistsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsPresenterTests.swift; sourceTree = "<group>"; };
 		AAA36B2E1DAD25BE00C7D926 /* ArtistsWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsWorkerTests.swift; sourceTree = "<group>"; };
 		AAA36B331DAD2B2300C7D926 /* XCTestCase+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+ViewController.swift"; sourceTree = "<group>"; };
-		AAA36B351DAD376000C7D926 /* ArtistsConfiguratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsConfiguratorTests.swift; sourceTree = "<group>"; };
 		AAA36B371DAD3D6D00C7D926 /* ArtistsRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsRouterTests.swift; sourceTree = "<group>"; };
 		AAA36B391DAD3F7800C7D926 /* ArtistsAPIStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsAPIStore.swift; sourceTree = "<group>"; };
 		AAA36B3A1DAD3F7800C7D926 /* ArtistsStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsStoreProtocol.swift; sourceTree = "<group>"; };
@@ -153,7 +150,6 @@
 		AAA36B441DAD401D00C7D926 /* ArtistsAPIStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsAPIStoreTests.swift; sourceTree = "<group>"; };
 		AAA36B471DAD429900C7D926 /* ArtistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTests.swift; sourceTree = "<group>"; };
 		AAA36B4C1DAD449E00C7D926 /* AlbumTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTests.swift; sourceTree = "<group>"; };
-		AAA36B4E1DAD44C400C7D926 /* ArtistConfiguratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistConfiguratorTests.swift; sourceTree = "<group>"; };
 		AAA36B511DAD44E300C7D926 /* ArtistInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistInteractorTests.swift; sourceTree = "<group>"; };
 		AAA36B531DAD44F600C7D926 /* AlbumsAPIStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsAPIStoreTests.swift; sourceTree = "<group>"; };
 		AAA36B551DAD450300C7D926 /* AlbumWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumWorkerTests.swift; sourceTree = "<group>"; };
@@ -502,7 +498,6 @@
 			children = (
 				AAA36B461DAD41CB00C7D926 /* Responses */,
 				AAA36B441DAD401D00C7D926 /* ArtistsAPIStoreTests.swift */,
-				AAA36B351DAD376000C7D926 /* ArtistsConfiguratorTests.swift */,
 				AAA36B2A1DAD25A100C7D926 /* ArtistsInteractorTests.swift */,
 				AAA36B2C1DAD25B400C7D926 /* ArtistsPresenterTests.swift */,
 				AAA36B371DAD3D6D00C7D926 /* ArtistsRouterTests.swift */,
@@ -545,7 +540,6 @@
 				AAA36B501DAD44D300C7D926 /* Responses */,
 				AAA36B531DAD44F600C7D926 /* AlbumsAPIStoreTests.swift */,
 				AAA36B551DAD450300C7D926 /* AlbumWorkerTests.swift */,
-				AAA36B4E1DAD44C400C7D926 /* ArtistConfiguratorTests.swift */,
 				AAA36B511DAD44E300C7D926 /* ArtistInteractorTests.swift */,
 				AAA36B571DAD451600C7D926 /* ArtistPresenterTests.swift */,
 				AAA36B5B1DAD454400C7D926 /* ArtistViewControllerTests.swift */,
@@ -933,7 +927,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA36B4F1DAD44C400C7D926 /* ArtistConfiguratorTests.swift in Sources */,
 				AAA36B291DAD259800C7D926 /* ArtistsViewControllerTests.swift in Sources */,
 				AAA36B5C1DAD454400C7D926 /* ArtistViewControllerTests.swift in Sources */,
 				AAA36B521DAD44E300C7D926 /* ArtistInteractorTests.swift in Sources */,
@@ -945,7 +938,6 @@
 				656FE5A31DAE569800CA5420 /* ArtistsAPIStoreTests.swift in Sources */,
 				AAA36B381DAD3D6D00C7D926 /* ArtistsRouterTests.swift in Sources */,
 				AAA36B481DAD429900C7D926 /* ArtistTests.swift in Sources */,
-				AAA36B361DAD376000C7D926 /* ArtistsConfiguratorTests.swift in Sources */,
 				AAA36B2D1DAD25B400C7D926 /* ArtistsPresenterTests.swift in Sources */,
 				AAA36B341DAD2B2300C7D926 /* XCTestCase+ViewController.swift in Sources */,
 				AAA36B4D1DAD449E00C7D926 /* AlbumTests.swift in Sources */,
