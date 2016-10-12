@@ -123,6 +123,7 @@ final class ArtistsPresenterOutputSpy: ArtistsPresenterOutput {
 
     var artistsViewModels = [ArtistViewModel]()
     var errorViewModel: ErrorViewModel?
+    
 
     func displayError(viewModel: ErrorViewModel) {
 

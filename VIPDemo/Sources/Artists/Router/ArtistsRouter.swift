@@ -28,7 +28,9 @@ class ArtistsRouter: ArtistsRouterInput {
 
     func navigateToArtist(atIndexPath indexPath: IndexPath) {
 
-        if let selectedArtist = viewController.output.artists?[indexPath.row] {
+        if let artists = viewController.output.artists, indexPath.row < artists.count {
+
+            let selectedArtist = artists[indexPath.row]
 
             let artistViewController = ArtistViewController(artist: selectedArtist)
             viewController.navigationController?.pushViewController(artistViewController, animated: true)
