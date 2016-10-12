@@ -29,17 +29,25 @@ protocol ArtistInteractorOutput {
 
 class ArtistInteractor: ArtistInteractorInput {
 
-    var output: ArtistInteractorOutput!
-    var worker: AlbumWorker!
+    let output: ArtistInteractorOutput
+    let worker: AlbumWorker
 
     var albums: [Album]?
+
+
+    // MARK: - Initializers
+
+    init(output: ArtistInteractorOutput, worker: AlbumWorker = AlbumWorker()) {
+
+        self.output = output
+        self.worker = worker
+    }
 
 
     // MARK: - Business logic
 
     func fetchAlbums(artistId: String) {
 
-        worker = AlbumWorker()
         worker.fetchAlbums(artistId: artistId) { [weak self] albums, error in
 
             if let strongSelf = self {

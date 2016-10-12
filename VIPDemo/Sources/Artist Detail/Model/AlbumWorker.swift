@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - AlbumWorker
 
-final class AlbumWorker {
+class AlbumWorker {
 
     fileprivate var store: AlbumsStoreProtocol
 

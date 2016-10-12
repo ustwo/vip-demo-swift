@@ -25,8 +25,7 @@ class ArtistConfigurator {
         let presenter = ArtistPresenter()
         presenter.output = viewController
 
-        let interactor = ArtistInteractor()
-        interactor.output = presenter
+        let interactor = ArtistInteractor(output: presenter)
 
         viewController.output = interactor
         viewController.router = router

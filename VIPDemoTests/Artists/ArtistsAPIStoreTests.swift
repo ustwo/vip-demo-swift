@@ -65,7 +65,8 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         // Given
 
-        let networkClientSpy = ArtistsNetworkClientErrorSpy()
+        let networkClientSpy = ArtistsNetworkClientSpy()
+        networkClientSpy.networkClientError = true
 
         let store = ArtistsAPIStore(networkClient: networkClientSpy)
 
@@ -95,52 +96,46 @@ final class ArtistsNetworkClientSpy: NetworkClientProtocol {
 
     var sendRequestCalled = false
 
+    var networkClientError = false
+
+    enum ArtistsNetworkClientError: Error {
+
+        case generic
+        case invalidData
+    }
+
 
     func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
 
         sendRequestCalled = true
 
-        let bundle = Bundle(for: ArtistsAPIStoreTests.self)
+        if networkClientError {
 
-        if let path = bundle.path(forResource: "top_artists", ofType: "json") {
+            let error = ArtistsNetworkClientError.generic
 
-            let url = URL(fileURLWithPath: path)
+            completion(nil, nil, error)
 
-            do {
+        } else {
 
-                let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
+            let bundle = Bundle(for: ArtistsAPIStoreTests.self)
 
-                completion(data, nil, nil)
+            if let path = bundle.path(forResource: "top_artists", ofType: "json") {
 
-            } catch {
+                let url = URL(fileURLWithPath: path)
 
+                do {
+
+                    let data = try Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
+
+                    completion(data, nil, nil)
+
+                } catch {
+
+                    let invalidDataError = ArtistsNetworkClientError.invalidData
+
+                    completion(nil, nil, invalidDataError)
+                }
             }
         }
-    }
-}
-
-
-// MARK: - ArtistsNetworkClientError
-
-enum ArtistsNetworkClientError: Error {
-
-    case generic
-}
-
-
-// MARK: - ArtistsNetworkClientErrorSpy
-
-final class ArtistsNetworkClientErrorSpy: NetworkClientProtocol {
-
-    var sendRequestCalled = false
-
-
-    func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-
-        sendRequestCalled = true
-
-        let error = ArtistsNetworkClientError.generic
-
-        completion(nil, nil, error)
     }
 }
