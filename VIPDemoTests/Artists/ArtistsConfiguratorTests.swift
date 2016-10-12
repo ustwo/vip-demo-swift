@@ -16,26 +16,91 @@ final class ArtistsConfiguratorTests: XCTestCase {
 
     func testConfigureShouldSetViewControllerRouter() {
 
-        // TODO
+        // Given
+
+        let viewController = ArtistsViewController()
+
+        // When
+
+        ArtistsConfigurator.sharedInstance.configure(viewController: viewController)
+
+        // Then
+
+        XCTAssertNotNil(viewController.router)
     }
 
     func testConfigureShouldSetViewControllerOutput() {
 
-        // TODO
+        // Given
+
+        let viewController = ArtistsViewController()
+
+        // When
+
+        ArtistsConfigurator.sharedInstance.configure(viewController: viewController)
+
+        // Then
+
+        XCTAssertNotNil(viewController.output)
     }
 
     func testConfigureShouldSetInteractorOutput() {
 
-        // TODO
+        // Given
+
+        let viewController = ArtistsViewController()
+
+        // When
+
+        ArtistsConfigurator.sharedInstance.configure(viewController: viewController)
+
+        // Then
+
+        if let interactor = viewController.output as? ArtistsInteractor {
+
+            XCTAssertNotNil(interactor.output)
+
+        } else {
+
+            XCTFail()
+        }
     }
 
     func testConfigureShouldSetPresenterOutput() {
 
-        // TODO
+        // Given
+
+        let viewController = ArtistsViewController()
+
+        // When
+
+        ArtistsConfigurator.sharedInstance.configure(viewController: viewController)
+
+        // Then
+
+        if let interactor = viewController.output as? ArtistsInteractor,
+            let presenter = interactor.output as? ArtistsPresenter {
+
+            XCTAssertNotNil(presenter.output)
+
+        } else {
+
+            XCTFail()
+        }
     }
 
     func testConfigureShouldSetRouterViewController() {
 
-        // TODO
+        // Given
+
+        let viewController = ArtistsViewController()
+
+        // When
+
+        ArtistsConfigurator.sharedInstance.configure(viewController: viewController)
+
+        // Then
+
+        XCTAssertEqual(viewController.router.viewController, viewController)
     }
 }
