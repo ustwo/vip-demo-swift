@@ -12,6 +12,7 @@ import BaseViewSwift
 
 // MARK: - ArtistView
 
+/// _ArtistView_ is the main view for _ArtistViewController_
 class ArtistView: BaseView {
 
     let tableView = UITableView()

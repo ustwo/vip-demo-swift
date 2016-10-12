@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ArtistViewControllerInput
 
+/// _ArtistViewControllerInput_ is a protocol for view controller input behaviours
 protocol ArtistViewControllerInput: ArtistPresenterOutput {
 
 }
@@ -18,16 +19,21 @@ protocol ArtistViewControllerInput: ArtistPresenterOutput {
 
 // MARK: - ArtistViewControllerOutput
 
+/// _ArtistViewControllerInput_ is a protocol for view controller output behaviours
 protocol ArtistViewControllerOutput {
 
     var albums: [Album]? { get }
 
+    /// Tells the output (interactor) to fetch albums for artist
+    ///
+    /// - parameter artistId: The artist identifier
     func fetchAlbums(artistId: String)
 }
 
 
 // MARK: - ArtistViewController
 
+/// _ArtistViewController_ is a view controller responsible for displaying artist details like a list of albums
 class ArtistViewController: UIViewController, ErrorPresenter {
 
     var output: ArtistViewControllerOutput!
@@ -42,6 +48,12 @@ class ArtistViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Initializers
 
+    /// Initializes an instance of _ArtistViewController_ with artist and configurator
+    ///
+    /// - parameter artist:       The artist
+    /// - parameter configurator: The configurator
+    ///
+    /// - returns: The instance of _ArtistViewController_
     init(artist: Artist, configurator: ArtistConfigurator = ArtistConfigurator.sharedInstance) {
 
         self.artist = artist
@@ -51,6 +63,11 @@ class ArtistViewController: UIViewController, ErrorPresenter {
         configure(configurator: configurator)
     }
 
+    /// Initializes an instance of _ArtistViewController_ from storyboard
+    ///
+    /// - parameter coder: The coder
+    ///
+    /// - returns: The instance of _ArtistViewController_
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -110,6 +127,7 @@ class ArtistViewController: UIViewController, ErrorPresenter {
 
     // MARK: - Event handling
 
+    /// Asks the output to fetch albums
     func fetchAlbums() {
 
         if let artistId = artist?.mbid {
@@ -118,6 +136,7 @@ class ArtistViewController: UIViewController, ErrorPresenter {
         }
     }
 
+    /// Asks the output to fetch albums. Called when there is a need to refresh the album list
     func refresh() {
 
         fetchAlbums()

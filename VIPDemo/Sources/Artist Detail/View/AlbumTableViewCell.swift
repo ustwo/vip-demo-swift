@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: -  AlbumTableViewCell
 
+/// _AlbumTableViewCell_ is the table view cell responsible to display an album
 class AlbumTableViewCell: BaseTableViewCell {
 
     let itemView = AlbumItemView()

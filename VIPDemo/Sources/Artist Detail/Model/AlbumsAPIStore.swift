@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - AlbumsAPIStore
 
+/// _AlbumsAPIStore_ is a class responsible for fetching albums
 final class AlbumsAPIStore {
 
     fileprivate struct Constants {
@@ -24,6 +25,11 @@ final class AlbumsAPIStore {
 
     // MARK: - Initializers
 
+    /// Initializes an instance of _AlbumsAPIStore_ with an object that conforms to the protocol _NetworkClientProtocol_
+    ///
+    /// - parameter networkClient: The object to be used to send requests to the API
+    ///
+    /// - returns: The instance of _AlbumsAPIStore_
     init(networkClient: NetworkClientProtocol = NetworkClient.sharedInstance) {
 
         self.networkClient = networkClient
@@ -35,6 +41,10 @@ final class AlbumsAPIStore {
 
 extension AlbumsAPIStore: AlbumsStoreProtocol {
 
+    /// Fetches a list of top albums for an artist
+    ///
+    /// - parameter artistId:   The artist identifier
+    /// - parameter completion: The completion block
     func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
 
         let limit = Constants.topAlbumsLimit

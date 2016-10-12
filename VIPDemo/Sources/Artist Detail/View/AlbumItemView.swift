@@ -12,6 +12,7 @@ import BaseViewSwift
 
 // MARK: - AlbumItemView
 
+/// _AlbumItemView_ is a view responsible for the display of album details (title and image)
 class AlbumItemView: BaseView {
 
     let imageView = UIImageView()

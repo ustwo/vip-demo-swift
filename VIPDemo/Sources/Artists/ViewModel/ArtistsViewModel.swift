@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - ArtistViewModel
 
+/// _ArtistViewModel_ is a model representing an artist with title and image
 struct ArtistViewModel {
 
     let title: String

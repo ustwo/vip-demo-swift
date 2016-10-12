@@ -11,6 +11,7 @@ import Foundation
 
 // MARK: - AlbumViewModel
 
+/// _AlbumViewModel_ is a model representing an album with title and image
 struct AlbumViewModel {
 
     let title: String
