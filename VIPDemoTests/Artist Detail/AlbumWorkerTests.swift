@@ -39,10 +39,10 @@ final class AlbumsStoreSpy: AlbumsStoreProtocol {
 
     var fetchAlbumsCalled = false
 
-    func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
+    func fetchAlbums(artistId: String, completion: @escaping ([Album]?, Error?) -> ()) {
 
         fetchAlbumsCalled = true
 
-        completion([], nil)
+        completion(nil, nil)
     }
 }

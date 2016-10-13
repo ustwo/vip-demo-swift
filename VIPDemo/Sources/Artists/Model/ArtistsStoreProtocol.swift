@@ -32,5 +32,5 @@ protocol ArtistsStoreProtocol {
     /// Fetches artists from a store (API, memory, etc)
     ///
     /// - parameter completion: The completion block
-    func fetchArtists(completion: @escaping ([Artist], Error?) -> ())
+    func fetchArtists(completion: @escaping ([Artist]?, Error?) -> ())
 }

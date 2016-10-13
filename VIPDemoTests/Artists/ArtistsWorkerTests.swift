@@ -42,10 +42,10 @@ final class ArtistsStoreSpy: ArtistsStoreProtocol {
 
     var fetchArtistsCalled = false
 
-    func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
+    func fetchArtists(completion: @escaping ([Artist]?, Error?) -> ()) {
 
         fetchArtistsCalled = true
 
-        completion([], nil)
+        completion(nil, nil)
     }
 }

@@ -75,10 +75,10 @@ final class ArtistInteractor: ArtistInteractorInput {
 
                     strongSelf.output.presentError(error: albumsError)
 
-                } else {
+                } else if let albumsArray = albums {
 
-                    strongSelf.albums = albums
-                    strongSelf.output.presentAlbums(albums: albums)
+                    strongSelf.albums = albumsArray
+                    strongSelf.output.presentAlbums(albums: albumsArray)
                 }
             }
         }

@@ -33,5 +33,5 @@ protocol AlbumsStoreProtocol {
     ///
     /// - parameter artistId:   The artist identifier
     /// - parameter completion: The completion block
-    func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ())
+    func fetchAlbums(artistId: String, completion: @escaping ([Album]?, Error?) -> ())
 }

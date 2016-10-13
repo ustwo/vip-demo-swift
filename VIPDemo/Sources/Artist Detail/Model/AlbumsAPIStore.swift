@@ -45,7 +45,7 @@ extension AlbumsAPIStore: AlbumsStoreProtocol {
     ///
     /// - parameter artistId:   The artist identifier
     /// - parameter completion: The completion block
-    func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
+    func fetchAlbums(artistId: String, completion: @escaping ([Album]?, Error?) -> ()) {
 
         let limit = Constants.topAlbumsLimit
         guard let url = LastFMAPIEndpoint.getTopAlbums(artistId, limit).url() else {
@@ -59,7 +59,7 @@ extension AlbumsAPIStore: AlbumsStoreProtocol {
 
         networkClient.sendRequest(request: request) { data, response, error in
 
-            var albums: [Album] = []
+            var albums: [Album]?
             var albumsError: Error?
 
             if let json = data?.jsonDictionary() {

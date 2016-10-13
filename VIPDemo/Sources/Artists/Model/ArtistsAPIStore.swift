@@ -44,7 +44,7 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
     /// Fetches a list of top artists
     ///
     /// - parameter completion: The completion block
-    func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
+    func fetchArtists(completion: @escaping ([Artist]?, Error?) -> ()) {
 
         let limit = Constants.topArtistsLimit
         guard let url = LastFMAPIEndpoint.getTopArtists(limit).url() else {
@@ -58,7 +58,7 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
 
         networkClient.sendRequest(request: request) { data, response, error in
 
-            var artists: [Artist] = []
+            var artists: [Artist]?
             var artistsError: Error?
 
             if let json = data?.jsonDictionary() {

@@ -49,7 +49,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         store.fetchArtists { (artists, error) in
 
-            if artists.count == 2
+            if artists?.count == 2
                 && error == nil {
 
                 expectationFetchArtists.fulfill()
@@ -76,7 +76,7 @@ final class ArtistsAPIStoreTests: XCTestCase {
 
         store.fetchArtists { (artists, error) in
 
-            if artists.count == 0
+            if artists == nil
                 && error != nil {
 
                 expectationFetchArtists.fulfill()

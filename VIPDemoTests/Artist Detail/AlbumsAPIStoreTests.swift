@@ -53,7 +53,7 @@ final class AlbumsAPIStoreTests: XCTestCase {
 
         store.fetchAlbums(artistId: artistId) { albums, error in
 
-            if albums.count == 5
+            if albums?.count == 5
                 && error == nil {
 
                 expectationFetchAlbums.fulfill()
@@ -81,7 +81,7 @@ final class AlbumsAPIStoreTests: XCTestCase {
 
         store.fetchAlbums(artistId: artistId) { albums, error in
 
-            if albums.count == 0
+            if albums == nil
                 && error != nil {
 
                 expectationFetchAlbums.fulfill()
