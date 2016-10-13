@@ -163,6 +163,8 @@ extension ArtistViewController: UITableViewDataSource {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableViewCell.reuseIdentifier(), for: indexPath) as? AlbumTableViewCell else {
 
+            assert(false, "Invalid table view cell. Did you forget to register AlbumTableViewCell?")
+
             return UITableViewCell()
         }
 

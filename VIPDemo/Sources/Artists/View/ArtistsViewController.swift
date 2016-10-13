@@ -144,6 +144,8 @@ extension ArtistsViewController: UITableViewDataSource {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableViewCell.reuseIdentifier(), for: indexPath) as? ArtistTableViewCell else {
 
+            assert(false, "Invalid table view cell. Did you forget to register ArtistTableViewCell?")
+
             return UITableViewCell()
         }
 
