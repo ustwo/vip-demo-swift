@@ -37,7 +37,7 @@ protocol ArtistsInteractorOutput {
 // MARK: - ArtistsInteractor
 
 /// _ArtistsInteractor_ is an interactor responsible for top artists business logic
-final class ArtistsInteractor: ArtistsInteractorInput {
+final class ArtistsInteractor {
 
     let output: ArtistsInteractorOutput
     let worker: ArtistsWorker
@@ -58,9 +58,9 @@ final class ArtistsInteractor: ArtistsInteractorInput {
         self.output = output
         self.worker = worker
     }
+}
 
-
-    // MARK: - Business logic
+extension ArtistsInteractor: ArtistsInteractorInput {
 
     /// Fetches a list of top artists through the worker
     func fetchArtists() {
