@@ -12,7 +12,7 @@ import UIKit
 // MARK: - ArtistsConfigurator
 
 /// _ArtistsConfigurator_ is a class responsible for configuring the VIP scene pathways for _ArtistsViewController_
-class ArtistsConfigurator {
+final class ArtistsConfigurator {
 
     /// Singleton instance of _ArtistsConfigurator_
     static let sharedInstance = ArtistsConfigurator()
