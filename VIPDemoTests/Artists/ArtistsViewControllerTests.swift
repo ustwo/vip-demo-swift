@@ -239,7 +239,7 @@ final class ArtistsViewControllerTests: XCTestCase {
         let viewController = ArtistsViewController()
         let tableView = viewController.artistsView.tableView
 
-        let router = ArtistsRouterSpy()
+        let router = ArtistsRouterInputSpy()
         viewController.router = router
 
         let artistViewModel = ArtistViewModel(title: "test 1", imageURL: nil)
@@ -291,13 +291,16 @@ final class ArtistsViewControllerOutputSpy: ArtistsViewControllerOutput {
 }
 
 
-// MARK: - ArtistsRouterSpy
+// MARK: - ArtistsRouterInputSpy
 
-final class ArtistsRouterSpy: ArtistsRouter {
+final class ArtistsRouterInputSpy: ArtistsRouterInput {
 
     var navigateToArtistCalled = false
 
-    override func navigateToArtist(atIndexPath indexPath: IndexPath) {
+    weak var viewController: ArtistsViewController?
+
+
+    func navigateToArtist(atIndexPath indexPath: IndexPath) {
 
         navigateToArtistCalled = true
     }

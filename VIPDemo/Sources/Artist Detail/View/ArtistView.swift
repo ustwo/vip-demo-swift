@@ -13,7 +13,7 @@ import BaseViewSwift
 // MARK: - ArtistView
 
 /// _ArtistView_ is the main view for _ArtistViewController_
-class ArtistView: BaseView {
+final class ArtistView: BaseView {
 
     let tableView = UITableView()
     let refreshControl = UIRefreshControl()

@@ -35,7 +35,7 @@ protocol ArtistViewControllerOutput {
 // MARK: - ArtistViewController
 
 /// _ArtistViewController_ is a view controller responsible for displaying artist details like a list of albums
-class ArtistViewController: UIViewController, ErrorPresenter {
+final class ArtistViewController: UIViewController, ErrorPresenter {
 
     var output: ArtistViewControllerOutput!
     var router: ArtistRouter!

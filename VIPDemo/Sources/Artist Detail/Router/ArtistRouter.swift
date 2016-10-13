@@ -14,14 +14,15 @@ import UIKit
 /// _ArtistRouterInput_ is a protocol for router input behaviours
 protocol ArtistRouterInput {
 
+    weak var viewController: ArtistViewController? { get set }
 }
 
 
 // MARK: - ArtistsRouter
 
 /// _ArtistRouter_ is a class responsible for routing from _ArtistViewController_
-class ArtistRouter: ArtistRouterInput {
+final class ArtistRouter: ArtistRouterInput {
 
-    weak var viewController: ArtistViewController!
+    weak var viewController: ArtistViewController?
 
 }

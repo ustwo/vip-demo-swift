@@ -37,7 +37,7 @@ protocol ArtistsInteractorOutput {
 // MARK: - ArtistsInteractor
 
 /// _ArtistsInteractor_ is an interactor responsible for top artists business logic
-class ArtistsInteractor: ArtistsInteractorInput {
+final class ArtistsInteractor: ArtistsInteractorInput {
 
     let output: ArtistsInteractorOutput
     let worker: ArtistsWorker

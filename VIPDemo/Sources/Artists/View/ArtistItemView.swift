@@ -13,7 +13,7 @@ import BaseViewSwift
 // MARK: - ArtistItemView
 
 /// _ArtistItemView_ is a view responsible for the display of artist details (title and image)
-class ArtistItemView: BaseView {
+final class ArtistItemView: BaseView {
 
     let imageView = UIImageView()
     let imageOverlayView = UIView()
