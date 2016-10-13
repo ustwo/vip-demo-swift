@@ -35,6 +35,7 @@
 		65BCA0B31DAB953700CDF74E /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCA0B21DAB953700CDF74E /* AlbumViewModel.swift */; };
 		65BCA0B51DABA2D300CDF74E /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */; };
 		65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCA0B61DABA2DD00CDF74E /* AlbumItemView.swift */; };
+		65C4C89F1DAF99CA004FA116 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4C89E1DAF99CA004FA116 /* Data+JSON.swift */; };
 		65CECCF81DAE581100A0A8C9 /* top_artists.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA36B5D1DAD468300C7D926 /* top_artists.json */; };
 		65CECCFB1DAE5A4500A0A8C9 /* artist.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CECCFA1DAE5A4500A0A8C9 /* artist.json */; };
 		65CECCFD1DAE5A4F00A0A8C9 /* album.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CECCFC1DAE5A4F00A0A8C9 /* album.json */; };
@@ -126,6 +127,7 @@
 		65BCA0B21DAB953700CDF74E /* AlbumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		65BCA0B41DABA2D300CDF74E /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		65BCA0B61DABA2DD00CDF74E /* AlbumItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumItemView.swift; sourceTree = "<group>"; };
+		65C4C89E1DAF99CA004FA116 /* Data+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
 		65CECCFA1DAE5A4500A0A8C9 /* artist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artist.json; sourceTree = "<group>"; };
 		65CECCFC1DAE5A4F00A0A8C9 /* album.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = album.json; sourceTree = "<group>"; };
 		67025728D9F5CA46579709BA /* Pods-VIPDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPDemoUITests/Pods-VIPDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				65BCA0AC1DAB8D4A00CDF74E /* Album.swift */,
 				655FBF011DA79A4100610595 /* Artist.swift */,
+				65C4C89E1DAF99CA004FA116 /* Data+JSON.swift */,
 				AACB2A571DACF26F0017AAEB /* ErrorPresenter.swift */,
 				AACB2A551DACEE0F0017AAEB /* ErrorViewModel.swift */,
 				655FBF021DA79A4100610595 /* Parsable.swift */,
@@ -898,6 +901,7 @@
 				655FBF191DA7EE4B00610595 /* ArtistView.swift in Sources */,
 				AAA36B3B1DAD3F7800C7D926 /* ArtistsAPIStore.swift in Sources */,
 				65BCA0B31DAB953700CDF74E /* AlbumViewModel.swift in Sources */,
+				65C4C89F1DAF99CA004FA116 /* Data+JSON.swift in Sources */,
 				65BCA0B71DABA2DD00CDF74E /* AlbumItemView.swift in Sources */,
 				651E67BA1DA56528007CE495 /* ArtistsView.swift in Sources */,
 				AACB2A611DAD0F410017AAEB /* ImageManager.swift in Sources */,

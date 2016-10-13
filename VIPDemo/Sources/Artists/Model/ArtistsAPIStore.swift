@@ -47,7 +47,7 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
     func fetchArtists(completion: @escaping ([Artist], Error?) -> ()) {
 
         let limit = Constants.topArtistsLimit
-        guard let url = APIEndpoint.getTopArtists(limit).url() else {
+        guard let url = LastFMAPIEndpoint.getTopArtists(limit).url() else {
 
             completion([], ArtistsStoreError.invalidURL)
 
@@ -58,35 +58,30 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
 
         networkClient.sendRequest(request: request) { data, response, error in
 
-            if let jsonData = data {
+            var artists: [Artist] = []
+            var artistsError: Error?
 
-                do {
+            if let json = data?.jsonDictionary() {
 
-                    if let json = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any],
-                        let artistsDictionary = json[Constants.topArtistsDictionaryKey] as? [String: Any],
-                        let artistsArray = artistsDictionary[Constants.topArtistsArrayKey] as? [[String: Any]] {
+                if let artistsDictionary = json[Constants.topArtistsDictionaryKey] as? [String: Any],
+                    let artistsArray = artistsDictionary[Constants.topArtistsArrayKey] as? [[String: Any]] {
 
-                        let artists = artistsArray.flatMap { artistDictionary -> Artist? in
+                    artists = artistsArray.flatMap { artistDictionary -> Artist? in
 
-                            return Artist.fromJSON(json: artistDictionary)
-                        }
-
-                        completion(artists, nil)
-
-                    } else {
-
-                        completion([], ArtistsStoreError.invalidResponse)
+                        return Artist.fromJSON(json: artistDictionary)
                     }
 
-                } catch {
+                } else {
 
-                    completion([], ArtistsStoreError.invalidResponse)
+                    artistsError = ArtistsStoreError.invalidResponse
                 }
 
             } else {
 
-                completion([], ArtistsStoreError.invalidResponse)
+                artistsError = ArtistsStoreError.invalidResponse
             }
+
+            completion(artists, artistsError)
         }
     }
 }

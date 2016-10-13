@@ -14,24 +14,19 @@ struct Strings {
 
     struct Artists {
 
-        static let screenTitle = Strings.localizedString(key: "Top Artists")
+        static let screenTitle = NSLocalizedString("Top Artists", comment: "Top Artists screen title")
     }
 
     struct Artist {
 
-        static let screenTitle = Strings.localizedString(key: "Artist")
-        static let albumsTitle = Strings.localizedString(key: "Top Albums")
-    }
-
-    private static func localizedString(key: String) -> String {
-
-        return NSLocalizedString(key, comment: "")
+        static let screenTitle = NSLocalizedString("Artist", comment: "Artist screen title")
+        static let albumsTitle = NSLocalizedString("Top Albums", comment: "Artist header title")
     }
 
     struct Error {
 
-        static let genericTitle = Strings.localizedString(key: "Sorry")
-        static let genericMessage = Strings.localizedString(key: "Something went wrong.")
-        static let okButtonTitle = Strings.localizedString(key: "Ok")
+        static let genericTitle = NSLocalizedString("Sorry", comment: "Generic error title")
+        static let genericMessage = NSLocalizedString("Something went wrong.", comment: "Generic error message")
+        static let okButtonTitle = NSLocalizedString("Ok", comment: "Alert button title")
     }
 }

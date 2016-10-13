@@ -48,7 +48,7 @@ extension AlbumsAPIStore: AlbumsStoreProtocol {
     func fetchAlbums(artistId: String, completion: @escaping ([Album], Error?) -> ()) {
 
         let limit = Constants.topAlbumsLimit
-        guard let url = APIEndpoint.getTopAlbums(artistId, limit).url() else {
+        guard let url = LastFMAPIEndpoint.getTopAlbums(artistId, limit).url() else {
 
             completion([], AlbumsStoreError.invalidURL)
 
@@ -59,35 +59,30 @@ extension AlbumsAPIStore: AlbumsStoreProtocol {
 
         networkClient.sendRequest(request: request) { data, response, error in
 
-            if let jsonData = data {
+            var albums: [Album] = []
+            var albumsError: Error?
 
-                do {
+            if let json = data?.jsonDictionary() {
 
-                    if let json = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any],
-                        let albumsDictionary = json[Constants.topAlbumsDictionaryKey] as? [String: Any],
-                        let albumsArray = albumsDictionary[Constants.topAlbumsArrayKey] as? [[String: Any]] {
+                if let albumsDictionary = json[Constants.topAlbumsDictionaryKey] as? [String: Any],
+                    let albumsArray = albumsDictionary[Constants.topAlbumsArrayKey] as? [[String: Any]] {
 
-                        let albums = albumsArray.flatMap { albumDictionary -> Album? in
+                    albums = albumsArray.flatMap { albumDictionary -> Album? in
 
-                            return Album.fromJSON(json: albumDictionary)
-                        }
-
-                        completion(albums, nil)
-
-                    } else {
-
-                        completion([], AlbumsStoreError.invalidResponse)
+                        return Album.fromJSON(json: albumDictionary)
                     }
 
-                } catch {
+                } else {
 
-                    completion([], AlbumsStoreError.invalidResponse)
+                    albumsError = AlbumsStoreError.invalidResponse
                 }
 
             } else {
 
-                completion([], AlbumsStoreError.invalidResponse)
+                albumsError = AlbumsStoreError.invalidResponse
             }
+
+            completion(albums, albumsError)
         }
     }
 }

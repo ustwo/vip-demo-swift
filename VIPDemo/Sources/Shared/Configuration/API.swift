@@ -9,10 +9,10 @@
 import Foundation
 
 
-// MARK: - Configuration
+// MARK: - LastFMAPI
 
-/// _Configuration_ is a struct responsible for general app configurations
-struct Configuration {
+/// _LastFMAPI_ is a struct responsible for general Last FM API configurations
+struct LastFMAPI {
 
     static let baseURLString = "https://ws.audioscrobbler.com/2.0/"
     static let apiKey = "foobar"
@@ -28,13 +28,13 @@ protocol URLConvertible {
 }
 
 
-// MARK: - APIEndpoint
+// MARK: - LastFMAPIEndpoint
 
-/// _APIEndpoint_ is an enumeration of all types of API requests
+/// _LastFMAPIEndpoint_ is an enumeration of all Last FM types of API requests
 ///
 /// - getTopArtists: The get top artists request
 /// - getTopAlbums:  The get top albums request
-enum APIEndpoint {
+enum LastFMAPIEndpoint {
 
     case getTopArtists(Int)
     case getTopAlbums(String, Int)
@@ -43,7 +43,7 @@ enum APIEndpoint {
 
 // MARK: - URLConvertible
 
-extension APIEndpoint: URLConvertible {
+extension LastFMAPIEndpoint: URLConvertible {
 
     func url() -> URL? {
 
@@ -53,13 +53,13 @@ extension APIEndpoint: URLConvertible {
 
             let method = "chart.gettopartists"
 
-            return URL(string: "\(Configuration.baseURLString)?method=\(method)&api_key=\(Configuration.apiKey)&format=json&limit=\(limit)")
+            return URL(string: "\(LastFMAPI.baseURLString)?method=\(method)&api_key=\(LastFMAPI.apiKey)&format=json&limit=\(limit)")
 
         case .getTopAlbums(let artistId, let limit):
 
             let method = "artist.gettopalbums"
 
-            return URL(string: "\(Configuration.baseURLString)?method=\(method)&api_key=\(Configuration.apiKey)&mbid=\(artistId)&format=json&limit=\(limit)")
+            return URL(string: "\(LastFMAPI.baseURLString)?method=\(method)&api_key=\(LastFMAPI.apiKey)&mbid=\(artistId)&format=json&limit=\(limit)")
         }
     }
 }

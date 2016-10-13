@@ -16,5 +16,10 @@ protocol Parsable {
 
     associatedtype T
 
+    /// Converts a JSON dictionary into a generic object type T
+    ///
+    /// - parameter json: JSON dictionary
+    ///
+    /// - returns: The generic object type
     static func fromJSON(json: [String: Any]) -> T?
 }

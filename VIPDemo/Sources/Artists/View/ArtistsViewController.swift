@@ -24,7 +24,6 @@ protocol ArtistsViewControllerOutput {
 
     var artists: [Artist]? { get }
 
-
     /// Tells the output (interactor) to fetch top artists
     func fetchArtists()
 }
