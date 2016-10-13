@@ -39,7 +39,7 @@ protocol ArtistsPresenterOutput: class {
 /// _ArtistsPresenter_ is a class responsible for presenting artists logic
 final class ArtistsPresenter {
 
-    weak var output: ArtistsPresenterOutput?
+    private(set) weak var output: ArtistsPresenterOutput?
 
     // MARK: - Initializers
 
