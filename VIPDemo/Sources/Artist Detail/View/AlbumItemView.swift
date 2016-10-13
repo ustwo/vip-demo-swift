@@ -29,16 +29,12 @@ final class AlbumItemView: BaseView {
 
     private struct Constants {
 
+        static let imageSize = CGSize(width: 50.0, height: 50.0)
+
         struct Margin {
 
             static let left: CGFloat = 10.0
             static let right: CGFloat = 10.0
-        }
-
-        struct ImageSize {
-
-            static let width: CGFloat = 50.0
-            static let height: CGFloat = 50.0
         }
     }
 
@@ -82,8 +78,8 @@ final class AlbumItemView: BaseView {
 
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Margin.left).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: Constants.ImageSize.width).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: Constants.ImageSize.height).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: Constants.imageSize.width).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: Constants.imageSize.height).isActive = true
     }
 
     private func setupTitleLabelConstraints() {
