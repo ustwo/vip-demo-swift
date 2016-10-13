@@ -47,21 +47,6 @@ final class ArtistViewControllerTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testInitShouldConfigureScene() {
-
-        // Given
-
-        let configuratorSpy = ArtistConfiguratorSpy()
-
-        // When
-
-        let _ = ArtistViewController(artist: artist, configurator: configuratorSpy)
-
-        // Then
-
-        XCTAssertTrue(configuratorSpy.configureCalled)
-    }
-
     func testInitShouldSetViewControllerRouter() {
 
         // When
@@ -288,20 +273,5 @@ final class ArtistViewControllerOutputSpy: ArtistViewControllerOutput {
     func fetchAlbums(artistId: String) {
 
         fetchAlbumsCalled = true
-    }
-}
-
-
-// MARK: - ArtistConfiguratorSpy
-
-final class ArtistConfiguratorSpy: ArtistConfigurator {
-
-    var configureCalled = false
-
-    override func configure(viewController: ArtistViewController) {
-
-        super.configure(viewController: viewController)
-
-        configureCalled = true
     }
 }

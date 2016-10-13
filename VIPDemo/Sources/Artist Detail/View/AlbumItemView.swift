@@ -55,7 +55,7 @@ class AlbumItemView: BaseView {
 
     private func setupImageView() {
 
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         addSubview(imageView)
     }
 
