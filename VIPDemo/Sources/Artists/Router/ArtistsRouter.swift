@@ -26,12 +26,22 @@ protocol ArtistsRouterProtocol {
 // MARK: - ArtistsRouter
 
 /// _ArtistsRouter_ is a class responsible for routing from _ArtistsViewController_
-final class ArtistsRouter: ArtistsRouterProtocol {
+final class ArtistsRouter {
 
     weak var viewController: ArtistsViewController?
 
 
-    // MARK: - ArtistsRouterInput
+    // MARK: - Initializers
+
+    init(viewController: ArtistsViewController) {
+
+        self.viewController = viewController
+    }
+}
+
+// MARK: - ArtistsRouterProtocol
+
+extension ArtistsRouter: ArtistsRouterProtocol {
 
     /// Handles the navigation when selecting an artist in the list to artist detail
     ///

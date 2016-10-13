@@ -25,4 +25,16 @@ final class ArtistRouter: ArtistRouterProtocol {
 
     weak var viewController: ArtistViewController?
 
+
+    // MARK: - Initializers
+
+    /// Initializes a new instance of _ArtistRouter_
+    ///
+    /// - parameter viewController: The _ArtistViewController_ to route from
+    ///
+    /// - returns: The instance of _ArtistRouter_
+    init(viewController: ArtistViewController) {
+
+        self.viewController = viewController
+    }
 }

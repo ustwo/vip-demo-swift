@@ -57,8 +57,7 @@ final class ArtistsRouterTests: XCTestCase {
 
         viewController.output = viewControllerOutputSpy
 
-        let router = ArtistsRouter()
-        router.viewController = viewController
+        let router = ArtistsRouter(viewController: viewController)
 
         loadView(window: window, viewController: navigationControllerSpy)
 
@@ -103,8 +102,7 @@ final class ArtistsRouterTests: XCTestCase {
 
         viewController.output = viewControllerOutputSpy
 
-        let router = ArtistsRouter()
-        router.viewController = viewController
+        let router = ArtistsRouter(viewController: viewController)
 
         loadView(window: window, viewController: navigationControllerSpy)
 

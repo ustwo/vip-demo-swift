@@ -24,12 +24,9 @@ final class ArtistsConfigurator {
     ///
     /// - parameter viewController: The view controller
     func configure(viewController: ArtistsViewController) {
-        let router = ArtistsRouter()
-        router.viewController = viewController
 
-        let presenter = ArtistsPresenter()
-        presenter.output = viewController
-
+        let router = ArtistsRouter(viewController: viewController)
+        let presenter = ArtistsPresenter(output: viewController)
         let interactor = ArtistsInteractor(output: presenter)
 
         viewController.output = interactor

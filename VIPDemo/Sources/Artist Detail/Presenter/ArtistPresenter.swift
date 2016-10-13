@@ -37,10 +37,28 @@ protocol ArtistPresenterOutput: class {
 // MARK: - ArtistsPresenter
 
 /// _ArtistPresenter_ is a class responsible for presenting artist logic
-final class ArtistPresenter: ArtistPresenterInput {
+final class ArtistPresenter {
 
-    weak var output: ArtistPresenterOutput!
+    weak var output: ArtistPresenterOutput?
 
+
+    // MARK: - Initializers
+
+    /// Initializes a new instance of _ArtistPresenter_ with an output object
+    ///
+    /// - parameter output: The output that conforms to protocol _ArtistPresenterOutput_
+    ///
+    /// - returns: The instance of _ArtistPresenter_
+    init(output: ArtistPresenterOutput) {
+
+        self.output = output
+    }
+}
+
+
+// MARK: - ArtistPresenterInput
+
+extension ArtistPresenter: ArtistPresenterInput {
 
     /// Prepares the album models for presentation and tells the output to display albums
     ///
@@ -52,7 +70,7 @@ final class ArtistPresenter: ArtistPresenterInput {
             return AlbumViewModel(title: album.name, imageURL: album.imageURL)
         }
 
-        output.displayAlbums(viewModels: viewModels)
+        output?.displayAlbums(viewModels: viewModels)
     }
 
     /// Prepares the error model for presentation and tells the output to display error
@@ -62,6 +80,6 @@ final class ArtistPresenter: ArtistPresenterInput {
 
         let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle, message: Strings.Error.genericMessage, buttonTitles: [Strings.Error.okButtonTitle])
 
-        output.displayError(viewModel: errorViewModel)
+        output?.displayError(viewModel: errorViewModel)
     }
 }

@@ -22,9 +22,7 @@ final class ArtistPresenterTests: XCTestCase {
         // Given
 
         let outputSpy = ArtistPresenterOutputSpy()
-
-        let presenter = ArtistPresenter()
-        presenter.output = outputSpy
+        let presenter = ArtistPresenter(output: outputSpy)
 
         let url = URL(string: "http://test.com")
         let imageUrl = URL(string: "http://imagetest.com")
@@ -47,9 +45,7 @@ final class ArtistPresenterTests: XCTestCase {
         // Given
 
         let outputSpy = ArtistPresenterOutputSpy()
-
-        let presenter = ArtistPresenter()
-        presenter.output = outputSpy
+        let presenter = ArtistPresenter(output: outputSpy)
 
         let url = URL(string: "http://test.com")
         let imageUrl = URL(string: "http://imagetest.com")
@@ -70,9 +66,7 @@ final class ArtistPresenterTests: XCTestCase {
         // Given
 
         let outputSpy = ArtistPresenterOutputSpy()
-
-        let presenter = ArtistPresenter()
-        presenter.output = outputSpy
+        let presenter = ArtistPresenter(output: outputSpy)
 
         // When
 
@@ -89,9 +83,7 @@ final class ArtistPresenterTests: XCTestCase {
         // Given
 
         let outputSpy = ArtistPresenterOutputSpy()
-
-        let presenter = ArtistPresenter()
-        presenter.output = outputSpy
+        let presenter = ArtistPresenter(output: outputSpy)
 
         // When
 
