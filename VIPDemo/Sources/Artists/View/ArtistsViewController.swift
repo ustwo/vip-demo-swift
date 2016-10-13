@@ -35,7 +35,7 @@ protocol ArtistsViewControllerOutput {
 final class ArtistsViewController: UIViewController, ErrorPresenter {
 
     var output: ArtistsViewControllerOutput!
-    var router: ArtistsRouterInput!
+    var router: ArtistsRouterProtocol!
 
     let artistsView = ArtistsView()
 

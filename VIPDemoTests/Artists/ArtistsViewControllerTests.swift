@@ -239,7 +239,7 @@ final class ArtistsViewControllerTests: XCTestCase {
         let viewController = ArtistsViewController()
         let tableView = viewController.artistsView.tableView
 
-        let router = ArtistsRouterInputSpy()
+        let router = ArtistsRouterProtocolSpy()
         viewController.router = router
 
         let artistViewModel = ArtistViewModel(title: "test 1", imageURL: nil)
@@ -293,7 +293,7 @@ final class ArtistsViewControllerOutputSpy: ArtistsViewControllerOutput {
 
 // MARK: - ArtistsRouterInputSpy
 
-final class ArtistsRouterInputSpy: ArtistsRouterInput {
+final class ArtistsRouterProtocolSpy: ArtistsRouterProtocol {
 
     var navigateToArtistCalled = false
 

@@ -9,10 +9,10 @@
 import UIKit
 
 
-// MARK: - ArtistsRouterInput
+// MARK: - ArtistsRouterProtocol
 
-/// _ArtistsRouterInput_ is a protocol for router input behaviours
-protocol ArtistsRouterInput {
+/// _ArtistsRouterProtocol_ is a protocol for router input behaviours
+protocol ArtistsRouterProtocol {
 
     weak var viewController: ArtistsViewController? { get set }
 
@@ -26,7 +26,7 @@ protocol ArtistsRouterInput {
 // MARK: - ArtistsRouter
 
 /// _ArtistsRouter_ is a class responsible for routing from _ArtistsViewController_
-final class ArtistsRouter: ArtistsRouterInput {
+final class ArtistsRouter: ArtistsRouterProtocol {
 
     weak var viewController: ArtistsViewController?
 
