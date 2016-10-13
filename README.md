@@ -35,7 +35,7 @@ The `VIPDemo` target should be used for running the project.
 
 TODO
 
-### Contributors
+### Maintainers
 
 * [Daniela Dias](mailto:daniela@ustwo.com)
 * [Shagun Madhikarmi](mailto:shagun@ustwo.com)
