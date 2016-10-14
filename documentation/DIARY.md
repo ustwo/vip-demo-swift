@@ -63,4 +63,4 @@ After completing the tests there were some changes we made:
 
 ## Summary
 
-All in all we learned how to build simple client / server iOS application using the VIP architecture instead of MVC. We still have some questions (such as view models for the screens, syncing model layer changes) but we feel we have enough knowledge of the advantages this architecture gives to iOS application development (e.g. smaller view controllers) and testing (strict simple responsibility principle) and we now feel more confident architecting other applications this way.
+After 7 days of work we completed our sample and learned how to build simple client / server iOS application using the VIP architecture instead of MVC. We still have some questions (such as view models for the screens, syncing model layer changes) but we feel we have enough knowledge of the advantages this architecture gives to iOS application development (e.g. smaller view controllers) and testing (strict simple responsibility principle) and we now feel more confident architecting other applications this way.
