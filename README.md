@@ -1,9 +1,10 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/ustwo/vip-demo-swift/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/ustwo/vip-demo-swift.svg?token=dAMpyZE3zb4kBmqR4Sjw&branch=artists-list)](https://travis-ci.com/ustwo/vip-demo-swift)
 
 # VIP Demo
 Swift sample app demonstrating [View Interactor Presenter](https://clean-swift.com) architecture for iOS.
 
-### Dependencies 
+### Dependencies
 
 * [Xcode 8](http://adcdownload.apple.com/Developer_Tools/Xcode_8/Xcode_8.xip)
 * [CocoaPods v1.1.0rc2](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0.rc.2)
@@ -21,9 +22,9 @@ You won't need [CocoaPods](https://cocoapods.org) to run the project but if you 
     pod install
 
 **Note.** If you get don't have CocoaPods installed you can install it using Ruby Gems as follows:
-	
+
 	gem install cocoapods --version 1.1.0rc2
-	
+
 
 ### Configuration
 
@@ -34,7 +35,7 @@ The `VIPDemo` target should be used for running the project.
 
 TODO
 
-### Contributors
+### Maintainers
 
 * [Daniela Dias](mailto:daniela@ustwo.com)
 * [Shagun Madhikarmi](mailto:shagun@ustwo.com)
