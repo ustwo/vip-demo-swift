@@ -11,13 +11,14 @@ env:
   matrix:
     - DESTINATION="OS=9.3,name=iPhone 6" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" RUN_TESTS="YES"
     - DESTINATION="name=iPhone 7 Plus" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" RUN_TESTS="YES"
+
+before_install:
+  - pod repo update
+
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-
-before_install:
-  - pod repo update
 
 # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
