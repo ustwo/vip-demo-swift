@@ -13,7 +13,7 @@ env:
     - DESTINATION="name=iPhone 7 Plus" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" RUN_TESTS="YES"
 
 before_install:
-  - pod repo update
+  - pod repo update --silent
 
 script:
   - set -o pipefail
