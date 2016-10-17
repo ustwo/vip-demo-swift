@@ -12,7 +12,7 @@ We started by using the excellent VIP templates from Raymond Law via [Clean Swif
 
 You can find our modified VIP Xcode templates [here](https://github.com/ustwo/vip-templates).
 
-### Demo 
+### Demo
 
 <image src="documentation/demo/demo1.gif" width=316 height=590/>
 
@@ -78,4 +78,6 @@ Please note that this project is released with a Contributor Code of Conduct. By
 
 ## License
 
-`VIP-Demo` is released under the MIT License. See the LICENSE file.
+`VIP-Demo` is released under the MIT License.
+
+See [License](LICENSE) and [Notice](NOTICE).
