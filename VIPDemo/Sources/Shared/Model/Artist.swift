@@ -56,7 +56,7 @@ extension Artist : Parsable {
 
             if let imagesArray = json[Constants.imageKey] as? [[String: Any]] {
 
-                let imageURLs = imagesArray.flatMap { (imageDictionary) -> URL? in
+                let imageURLs = imagesArray.compactMap { (imageDictionary) -> URL? in
 
                     if let imageSize = imageDictionary[Constants.imageSizeKey] as? String, imageSize == Constants.imageSizeValue,
                         let imageURLString = imageDictionary[Constants.imageURLKey] as? String {

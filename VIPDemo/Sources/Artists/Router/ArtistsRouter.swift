@@ -14,7 +14,7 @@ import UIKit
 /// _ArtistsRouterProtocol_ is a protocol for router input behaviours
 protocol ArtistsRouterProtocol {
 
-    weak var viewController: ArtistsViewController? { get }
+    var viewController: ArtistsViewController? { get }
 
     /// Handles the navigation when selecting an artist in the list
     ///

@@ -119,7 +119,7 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
     }
 
     /// Asks the output to fetch artists. Called when there is a need to refresh the artists list
-    func refresh() {
+    @objc func refresh() {
 
         fetchArtists()
     }

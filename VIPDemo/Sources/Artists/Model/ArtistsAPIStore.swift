@@ -66,7 +66,7 @@ extension ArtistsAPIStore: ArtistsStoreProtocol {
                 if let artistsDictionary = json[Constants.topArtistsDictionaryKey] as? [String: Any],
                     let artistsArray = artistsDictionary[Constants.topArtistsArrayKey] as? [[String: Any]] {
 
-                    artists = artistsArray.flatMap { artistDictionary -> Artist? in
+                    artists = artistsArray.compactMap { artistDictionary -> Artist? in
 
                         return Artist.fromJSON(json: artistDictionary)
                     }

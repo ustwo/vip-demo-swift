@@ -67,7 +67,7 @@ extension AlbumsAPIStore: AlbumsStoreProtocol {
                 if let albumsDictionary = json[Constants.topAlbumsDictionaryKey] as? [String: Any],
                     let albumsArray = albumsDictionary[Constants.topAlbumsArrayKey] as? [[String: Any]] {
 
-                    albums = albumsArray.flatMap { albumDictionary -> Album? in
+                    albums = albumsArray.compactMap { albumDictionary -> Album? in
 
                         return Album.fromJSON(json: albumDictionary)
                     }
