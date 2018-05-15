@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - BaseViewSwift (~> 1.0.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BaseViewSwift
+
 SPEC CHECKSUMS:
   BaseViewSwift: fc4705b9e238fcac7a796a565a7471e1f5d08a39
 
-PODFILE CHECKSUM: da3f905cae717e8f3ebdb9b92e80100844b5c2b4
+PODFILE CHECKSUM: ba7b843601ae3af3863afc1e4e06d0b6ba3ecc15
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.5.0
