@@ -19,7 +19,8 @@ protocol ArtistsRouterProtocol {
     /// Handles the navigation when selecting an artist in the list
     ///
     /// - parameter indexPath: The selected index path
-    func navigateToArtist(atIndexPath indexPath: IndexPath)
+    /// - parameter animated: Flag indicating whether the updates should be animate or not
+    func navigateToArtist(atIndexPath indexPath: IndexPath, animated: Bool)
 }
 
 
@@ -46,14 +47,15 @@ extension ArtistsRouter: ArtistsRouterProtocol {
     /// Handles the navigation when selecting an artist in the list to artist detail
     ///
     /// - parameter indexPath: The selected index path
-    func navigateToArtist(atIndexPath indexPath: IndexPath) {
+    /// - parameter animated: Flag indicating whether the updates should be animate or not
+    func navigateToArtist(atIndexPath indexPath: IndexPath, animated: Bool = false) {
 
         if let artists = viewController?.output.artists, indexPath.row < artists.count {
 
             let selectedArtist = artists[indexPath.row]
 
             let artistViewController = ArtistViewController(artist: selectedArtist)
-            viewController?.navigationController?.pushViewController(artistViewController, animated: true)
+            viewController?.navigationController?.pushViewController(artistViewController, animated: animated)
         }
     }
 }

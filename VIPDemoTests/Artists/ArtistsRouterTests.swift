@@ -64,7 +64,7 @@ final class ArtistsRouterTests: XCTestCase {
         // When
 
         let indexPath = IndexPath(row: 0, section: 0)
-        router.navigateToArtist(atIndexPath: indexPath)
+        router.navigateToArtist(atIndexPath: indexPath, animated: false)
 
         // Then
 

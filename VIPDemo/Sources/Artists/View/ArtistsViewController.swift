@@ -163,7 +163,7 @@ extension ArtistsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        router.navigateToArtist(atIndexPath: indexPath)
+        router.navigateToArtist(atIndexPath: indexPath, animated: true)
     }
 }
 
