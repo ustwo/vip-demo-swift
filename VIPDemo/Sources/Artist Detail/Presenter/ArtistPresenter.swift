@@ -65,7 +65,7 @@ extension ArtistPresenter: ArtistPresenterInput {
     /// - parameter albums: The list of albums
     func presentAlbums(albums: [Album]) {
 
-        let viewModels = albums.flatMap { album -> AlbumViewModel in
+        let viewModels = albums.compactMap { album -> AlbumViewModel in
 
             return AlbumViewModel(title: album.name, imageURL: album.imageURL)
         }

@@ -138,7 +138,7 @@ final class ArtistViewController: UIViewController, ErrorPresenter {
     }
 
     /// Asks the output to fetch albums. Called when there is a need to refresh the album list
-    func refresh() {
+    @objc func refresh() {
 
         fetchAlbums()
     }

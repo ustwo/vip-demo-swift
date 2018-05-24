@@ -59,7 +59,7 @@ extension ArtistsPresenter: ArtistsPresenterInput {
     /// - parameter artists: The list of artists
     func presentArtists(artists: [Artist]) {
 
-        let viewModels = artists.flatMap { artist -> ArtistViewModel in
+        let viewModels = artists.compactMap { artist -> ArtistViewModel in
 
             return ArtistViewModel(title: artist.name, imageURL: artist.imageURL)
         }

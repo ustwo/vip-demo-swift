@@ -300,7 +300,7 @@ final class ArtistsRouterProtocolSpy: ArtistsRouterProtocol {
     weak var viewController: ArtistsViewController?
 
 
-    func navigateToArtist(atIndexPath indexPath: IndexPath) {
+    func navigateToArtist(atIndexPath indexPath: IndexPath, animated: Bool) {
 
         navigateToArtistCalled = true
     }

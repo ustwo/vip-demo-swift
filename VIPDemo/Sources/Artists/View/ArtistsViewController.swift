@@ -119,7 +119,7 @@ final class ArtistsViewController: UIViewController, ErrorPresenter {
     }
 
     /// Asks the output to fetch artists. Called when there is a need to refresh the artists list
-    func refresh() {
+    @objc func refresh() {
 
         fetchArtists()
     }
@@ -163,7 +163,7 @@ extension ArtistsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        router.navigateToArtist(atIndexPath: indexPath)
+        router.navigateToArtist(atIndexPath: indexPath, animated: true)
     }
 }
 
